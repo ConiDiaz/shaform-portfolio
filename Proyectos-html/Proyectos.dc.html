@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>SHAFORM — Proyectos</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Poppins,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.root{animation:entra .5s ease both}
+@keyframes entra{from{opacity:0}to{opacity:1}}
+a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}
+.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}
+.lnk:hover{text-decoration-color:#F8BED6}
+.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}
+.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}
+.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}
+.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}
+.chip{transition:border-color .25s ease}
+.m-sombra .chip:hover{border-color:#FFFFFF !important}
+.m-luz .chip:hover{border-color:#000000 !important}
+.pj .ph{overflow:hidden}
+.pj img,.rev{transition:transform .6s ease,filter .6s ease}
+.pj:hover img,.rev:hover{filter:none !important}
+.pj:hover img{transform:scale(1.03)}
+.pj .dot{opacity:0;transition:opacity .25s ease}
+.pj:hover .dot{opacity:1}
+.menubtn{display:none !important}
+@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}
+@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
+</style>
+</helmet>
+<div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
+<header id="top" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px">
+<a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
+<div style="display: flex; align-items: center; gap: 16px 40px">
+<nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
+<a class="lnk" href="../Proyectos-html/Proyectos.dc.html" aria-current="page" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F8BED6"></span>Proyectos</a>
+<a class="lnk" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Sobre mí</a>
+<a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Hablemos</a>
+</nav>
+<div class="tog" role="group" aria-label="Atmósfera" style="display: flex; gap: 4px; border: 1px solid {{line}}; border-radius: 999px; padding: 4px">
+<button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tSBg}}; color: {{tSFg}}">Sombra</button>
+<button class="btn" type="button" onClick="{{irLuz}}" aria-pressed="{{esLuz}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tLBg}}; color: {{tLFg}}">Luz</button>
+</div>
+<a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid {{fg}}; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
+</div>
+</header>
+<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{cuenta}}</span>
+<h1 style="margin: 0; font-size: clamp(52px, 9vw, 128px); line-height: 1; font-weight: 600">Proyectos</h1>
+</div>
+<p style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; flex: 0 1 420px">Identidad, editorial, gráfica y digital. Cada uno empezó como una idea sin forma.</p>
+</section>
+
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; border-top: 1px solid {{line}}; border-bottom: 1px solid {{line}}; padding: 14px 0">
+<div role="group" aria-label="Filtrar por categoría" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="6">
+<button class="chip" type="button" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid {{c.border}}; background: transparent; color: inherit; cursor: pointer; font-size: 14px"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{c.dot}}"></span>{{c.label}}</button>
+</sc-for>
+</div>
+<div class="hide-s" role="group" aria-label="Vista" style="display: flex; gap: 4px">
+<button class="lnk" type="button" onClick="{{verMosaico}}" aria-pressed="{{esMosaico}}" style="min-height: 40px; padding: 0 12px; border: 0; background: transparent; color: inherit; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; text-decoration-color: {{decoMos}}">Grilla</button>
+<button class="lnk" type="button" onClick="{{verIndice}}" aria-pressed="{{esIndice}}" style="min-height: 40px; padding: 0 12px; border: 0; background: transparent; color: inherit; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; text-decoration-color: {{decoInd}}">Índice</button>
+</div>
+</div>
+</div>
+
+<sc-if value="{{esMosaico}}" hint-placeholder-val="{{true}}">
+<section aria-label="Grilla de proyectos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
+<sc-for list="{{lista}}" as="p" hint-placeholder-count="8">
+<a class="pj" href="{{p.href}}" style="grid-column: {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div class="ph" style="height: {{p.h}}; background: {{line}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.cat}}</span></div>
+</a>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{esIndice}}" hint-placeholder-val="{{false}}">
+<section aria-label="Índice de proyectos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<sc-for list="{{lista}}" as="p" hint-placeholder-count="8">
+<a class="pj" href="{{p.href}}" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px 24px; align-items: center; border-bottom: 1px solid {{line}}; padding: 18px 0">
+<span style="grid-column: span 6; display: inline-flex; align-items: center; gap: 12px; font-size: clamp(22px, 2.6vw, 36px); font-weight: 600; line-height: 1.15"><span class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span>
+<span style="grid-column: span 3; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.cat}}</span>
+<div class="ph" style="grid-column: 10 / span 3; height: 96px"><img src="{{p.img}}" alt="" aria-hidden="true" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
+</a>
+</sc-for>
+</section>
+</sc-if>
+<section aria-label="Hablemos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%">
+<div style="border-top: 1px solid {{line}}; padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.2; font-weight: 600; max-width: 760px">¿Tienes una idea que todavía no tiene forma?</p>
+<a class="btn btn-line" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">Hablemos →</a>
+</div>
+</section>
+<footer style="overflow: hidden; border-top: 1px solid {{line}}">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 40px; padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px 40px; justify-content: space-between; align-items: flex-start">
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">
+<span>Santiago • CL</span>
+<span>© 2026 SHAFORM</span>
+</div>
+<nav aria-label="Pie" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a class="lnk" href="../Inicio-html/Main.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Inicio</a><a class="lnk" href="Proyectos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Proyectos</a><a class="lnk" href="../Sobre mí-html/SobreMi.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Sobre mí</a><a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Hablemos</a>
+</nav>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0; font-size: 15px">
+<a class="lnk" href="mailto:byshaform@gmail.com" style="min-height: 36px; display: inline-flex; align-items: center">Email</a>
+<a class="lnk" href="https://instagram.com/byshaform" style="min-height: 36px; display: inline-flex; align-items: center">Instagram</a>
+<a class="lnk" href="https://www.behance.net/" style="min-height: 36px; display: inline-flex; align-items: center">Behance</a>
+<a class="lnk" href="#top" style="min-height: 36px; display: inline-flex; align-items: center; margin-top: 8px">Volver arriba ↑</a>
+</div>
+</div>
+<a href="../Inicio-html/Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden">
+<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto">
+</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;modoInicial&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sombra&quot;,&quot;luz&quot;],&quot;default&quot;:&quot;sombra&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:4200}}">
+class Component extends DCLogic {
+  renderVals() {
+    var st = this.state || {};
+    var modo = st.modo || this.props.modoInicial || 'sombra';
+    var s = modo === 'sombra';
+    var K = '#000000', P = '#FFFFFF';
+    var self = this;
+    var v = {
+      esSombra: s, esLuz: !s,
+      modoClass: s ? 'm-sombra' : 'm-luz',
+      bg: s ? K : P, fg: s ? P : K,
+      line: s ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.16)',
+      logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
+      filtro: s ? 'grayscale(1)' : 'none',
+      tSBg: s ? P : 'transparent', tSFg: s ? K : K,
+      tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
+      menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
+      irSombra: function () { self.setState({ modo: 'sombra' }); },
+      irLuz: function () { self.setState({ modo: 'luz' }); },
+      alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
+    };
+    var P = [
+      { name: 'Mindly', cat: 'UX/UI', k: ['uxui','digital'], img: './assets/4a9044e1ee3ba53c9aec634fa5d2cb9a.jpg', alt: 'Plataforma Mindly en un portátil', href: 'ProyectoMindly.dc.html' },
+      { name: 'Lafken', cat: 'Identidad', k: ['identidad'], img: './assets/30dcb9ff8072b4ef7e28834a4d04ff91.jpg', alt: 'Botellas de cerveza Lafken', href: 'Proyecto.dc.html' },
+      { name: 'Thanatos', cat: 'Editorial', k: ['editorial'], img: './assets/495d68695761413f5b19c6c9b7718e0e.jpg', alt: 'Fotolibro Thanatos', href: 'Proyecto.dc.html' },
+      { name: 'Centro de Documentación MNBA', cat: 'Identidad', k: ['identidad'], img: './assets/30c82996a72b31768aa59cb6f146c9d5.jpg', alt: 'Papelería del Centro de Documentación', href: 'Proyecto.dc.html' },
+      { name: 'Silos', cat: 'Gráfico', k: ['grafico'], img: './assets/3286289044750502c148f1af223a932a.jpg', alt: 'Espécimen tipográfico de Silos', href: 'Proyecto.dc.html' },
+      { name: 'Manos del Pasado', cat: 'Gráfico', k: ['grafico'], img: './assets/f8f2241089428717f648177d486c87b8.jpg', alt: 'Afiche enmarcado de Manos del Pasado', href: 'Proyecto.dc.html' },
+      { name: 'Claws & Cats', cat: 'Digital', k: ['digital'], img: './assets/d4e32e301ab57b9bc176465b9bf1fda7.jpg', alt: 'Afiche de Claws and Cats', href: 'Proyecto.dc.html' },
+      { name: 'Manos Creativas', cat: 'Identidad', k: ['identidad'], img: './assets/3821c9a4c8e3cc6203b60a494b1e536e.jpg', alt: 'Feed de Instagram de Manos Creativas', href: 'Proyecto.dc.html' }
+    ];
+    var F = [['todos','Todos'],['identidad','Identidad'],['editorial','Editorial'],['grafico','Gráfico'],['digital','Digital'],['uxui','UX/UI']];
+    var f = st.filtro || 'todos';
+    var vista = st.vista || 'mosaico';
+    var L = P.filter(function (p) { return f === 'todos' || p.k.indexOf(f) >= 0; });
+    var T = [[8,4],[4,4,4],[4,8],[6,6]];
+    var R = { 1: [12], 2: [6,6], 3: [4,4,4] };
+    var H = { 1: 'clamp(320px, 44vw, 640px)', 2: 'clamp(300px, 36vw, 540px)', 3: 'clamp(240px, 26vw, 380px)' };
+    var out = [], i = 0, t = 0;
+    while (i < L.length) {
+      var row = T[t % T.length];
+      if (L.length - i < row.length) row = R[L.length - i];
+      for (var j = 0; j < row.length; j++) {
+        out.push(Object.assign({}, L[i + j], { span: 'span ' + row[j], h: H[row.length] }));
+      }
+      i += row.length; t++;
+    }
+    v.lista = out;
+    v.cuenta = L.length + (L.length === 1 ? ' proyecto' : ' proyectos');
+    v.chips = F.map(function (c) {
+      var on = c[0] === f;
+      return { label: c[1], on: on, border: on ? v.fg : v.line, dot: on ? '#F8BED6' : 'transparent', pick: function () { self.setState({ filtro: c[0] }); } };
+    });
+    v.esMosaico = vista === 'mosaico'; v.esIndice = vista === 'indice';
+    v.decoMos = v.esMosaico ? '#F8BED6' : 'transparent'; v.decoInd = v.esIndice ? '#F8BED6' : 'transparent';
+    v.verMosaico = function () { self.setState({ vista: 'mosaico' }); };
+    v.verIndice = function () { self.setState({ vista: 'indice' }); };
+    return v;
+  }
+}
+</script>
+</body>
+</html>
