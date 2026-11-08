@@ -1,29 +1,31 @@
-# Proyecto — Centro de Documentación MNBA — design reference
+# SHAFORM — Portafolio personal
 
-This is a design mockup created in a visual design tool, exported as a
-standalone page. Treat it as a REFERENCE MOCKUP, not production code:
-the markup and inline styles carry the design's precise values — colors,
-font sizes, spacing, radii, shadows, layout — which an implementation
-should replicate faithfully in its own components and styling system
-rather than copy wholesale.
+Sitio web estático para presentar el portafolio de diseño gráfico y branding de Constanza Díaz Olguín.
+El proyecto está estructurado como un repositorio único con varias páginas temáticas:
 
-## Contents
+- Inicio: `Inicio-html/Main.dc.html`
+- Proyectos: `Proyectos-html/Proyectos.dc.html`
+- Sobre mí: `Sobre mí-html/SobreMi.dc.html`
+- Hablemos: `Hablemos-html/Hablemos.dc.html`
+- Proyecto destacado: `Proyecto — Centro de Documentación MNBA-html/Proyecto.dc.html`
 
-- `Proyecto.dc.html` — the artboard (a Design Component: an `<x-dc>`
-  template + a small logic class). The values to replicate live in its
-  inline `style="…"` attributes and the `<helmet><style>` block.
-- `assets/` — files uploaded to the design (images, fonts, media)
-- `support.js`, `vendor/react*.js` — the runtime that renders the
-  component in a browser; not part of the design.
+## Vista previa local
 
-## Uploaded files
+Desde la carpeta raíz del repositorio:
 
-Images, fonts and media uploaded to the design are written once each under
-`assets/` — 3 in this export — and the exported files refer to them there. A
-reference a script puts together while the page runs (for example
-`"/_blob/" + id`) is not rewritten and does not load from this folder.
+```bash
+python -m http.server 8000
+```
 
-## Viewing
+Luego abre:
 
-Serve the folder (e.g. `python3 -m http.server`) and open `Proyecto.dc.html`;
-some browsers block the scripts over file://.
+- `http://localhost:8000/`
+- o directamente cualquiera de las páginas dentro de las carpetas
+
+## Navegación
+
+Todas las páginas están enlazadas entre sí para facilitar la navegación dentro del portafolio y la experiencia visual del sitio.
+
+## Público
+
+Este repositorio ha sido preparado para publicarse en GitHub como proyecto abierto.
