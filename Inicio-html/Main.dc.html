@@ -13,34 +13,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:Poppins,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit}
-.root{animation:entra .5s ease both}
-@keyframes entra{from{opacity:0}to{opacity:1}}
-a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}
-.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}
-.lnk:hover{text-decoration-color:#F8BED6}
-.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}
-.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}
-.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}
-.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}
-.chip{transition:border-color .25s ease}
-.m-sombra .chip:hover{border-color:#FFFFFF !important}
-.m-luz .chip:hover{border-color:#000000 !important}
-.pj .ph{overflow:hidden}
-.pj img,.rev{transition:transform .6s ease,filter .6s ease}
-.pj:hover img,.rev:hover{filter:none !important}
-.pj:hover img{transform:scale(1.03)}
-.pj .dot{opacity:0;transition:opacity .25s ease}
-.pj:hover .dot{opacity:1}
-.menubtn{display:none !important}
-@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}
-@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
+html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.home-card img{filter:grayscale(100%);transition:filter .6s ease}.home-card:hover img,.home-card:focus-visible img{filter:none}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
-<header id="top" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px">
+<header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}; border-bottom: 1px solid {{line}}">
 <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <div style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
@@ -64,16 +41,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4p
 </div>
 <span style="font-size: clamp(10px, 1.2vw, 15px); font-weight: 300; letter-spacing: .3em; text-transform: uppercase">By Constanza Díaz Olguín</span>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 28px 64px; align-items: flex-end; justify-content: space-between">
-<div style="flex: 1 1 480px; max-width: 760px">
+<div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr); gap: clamp(20px, 4vw, 56px); align-items: end">
+<div style="max-width: 760px">
 <sc-if value="{{esSombra}}" hint-placeholder-val="{{true}}"><h1 style="margin: 0; font-size: clamp(36px, 5.6vw, 76px); line-height: 1.08; font-weight: 600">Toda idea empieza invisible.</h1></sc-if>
 <sc-if value="{{esLuz}}" hint-placeholder-val="{{false}}"><h1 style="margin: 0; font-size: clamp(36px, 5.6vw, 76px); line-height: 1.08; font-weight: 600">Lo invisible, hecho forma.</h1></sc-if>
 </div>
-<div style="flex: 0 1 360px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 360px">
 <p style="margin: 0; font-size: 16px; line-height: 1.7">Soy Constanza, diseñadora gráfica. Me siento al lado de tu idea: pregunto, escucho y ordeno hasta que toma forma.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center">
 <a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">Ver trabajos ↓</a>
-<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 300"><span style="width: 7px; height: 7px; border-radius: 50%; border: 1px solid {{fg}}"></span>{{pista}}</span>
 </div>
 </div>
 </div>
@@ -85,19 +61,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4p
 <a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="font-size: 15px; min-height: 44px; display: inline-flex; align-items: center">Ver todos los proyectos →</a>
 </div>
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
-<a class="pj" href="ProyectoMindly.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/4a9044e1ee3ba53c9aec634fa5d2cb9a.jpg" alt="Plataforma Mindly en un portátil sobre un sillón azul" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Mindly</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">UX/UI</span></div>
 </a>
-<a class="pj" href="Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/30dcb9ff8072b4ef7e28834a4d04ff91.jpg" alt="Botellas de cerveza Lafken" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Lafken</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Identidad</span></div>
 </a>
-<a class="pj" href="Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/495d68695761413f5b19c6c9b7718e0e.jpg" alt="Fotolibro Thanatos de tapa negra" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Thanatos</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Editorial</span></div>
 </a>
-<a class="pj" href="Proyecto.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Papelería del Centro de Documentación del MNBA" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: {{filtro}}"></div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Centro de Documentación MNBA</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Identidad</span></div>
 </a>
@@ -139,22 +115,20 @@ a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4p
 </section>
 <footer style="overflow: hidden; border-top: 1px solid {{line}}">
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 40px; padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px 40px; justify-content: space-between; align-items: flex-start">
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">
-<span>Santiago • CL</span>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; min-width: 220px">
+<span>SANTIAGO • CL</span>
 <span>© 2026 SHAFORM</span>
+<span>LO INVISIBLE HECHO FORMA</span>
 </div>
-<nav aria-label="Pie" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
-<a class="lnk" href="Main.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Inicio</a><a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Proyectos</a><a class="lnk" href="../Sobre mí-html/SobreMi.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Sobre mí</a><a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Hablemos</a>
-</nav>
-<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0; font-size: 15px">
+<div style="flex: 1 1 0; min-height: 1px"></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0; font-size: 15px; min-width: 220px">
 <a class="lnk" href="mailto:byshaform@gmail.com" style="min-height: 36px; display: inline-flex; align-items: center">Email</a>
 <a class="lnk" href="https://instagram.com/byshaform" style="min-height: 36px; display: inline-flex; align-items: center">Instagram</a>
-<a class="lnk" href="https://www.behance.net/" style="min-height: 36px; display: inline-flex; align-items: center">Behance</a>
-<a class="lnk" href="#top" style="min-height: 36px; display: inline-flex; align-items: center; margin-top: 8px">Volver arriba ↑</a>
+<span class="lnk" style="min-height: 36px; display: inline-flex; align-items: center">LinkedIn</span>
 </div>
 </div>
-<a href="Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden">
-<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto">
+<a href="Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden; transform: translateY(12px)">
+<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
 </a>
 </footer>
 </div>
@@ -181,8 +155,7 @@ class Component extends DCLogic {
       irLuz: function () { self.setState({ modo: 'luz' }); },
       alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
     };
-    v.etiquetaModo = s ? 'Sombra — el proceso' : 'Luz — el resultado';
-    v.pista = s ? 'O toca el punto para ver la forma.' : 'O toca el punto para volver a la sombra.';
+    v.etiquetaModo = s ? 'SOMBRA EL PROCESO' : 'LUZ EL RESULTADO';
     v.puntoLabel = s ? 'Cambiar a luz' : 'Cambiar a sombra';
     return v;
   }

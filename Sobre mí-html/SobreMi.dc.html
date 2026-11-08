@@ -13,34 +13,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:Poppins,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit}
-.root{animation:entra .5s ease both}
-@keyframes entra{from{opacity:0}to{opacity:1}}
-a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}
-.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}
-.lnk:hover{text-decoration-color:#F8BED6}
-.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}
-.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}
-.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}
-.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}
-.chip{transition:border-color .25s ease}
-.m-sombra .chip:hover{border-color:#FFFFFF !important}
-.m-luz .chip:hover{border-color:#000000 !important}
-.pj .ph{overflow:hidden}
-.pj img,.rev{transition:transform .6s ease,filter .6s ease}
-.pj:hover img,.rev:hover{filter:none !important}
-.pj:hover img{transform:scale(1.03)}
-.pj .dot{opacity:0;transition:opacity .25s ease}
-.pj:hover .dot{opacity:1}
-.menubtn{display:none !important}
-@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}
-@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
+html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}.about-hero-title{font-size:clamp(52px,9vw,128px);line-height:1;word-break:break-word}.about-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px 24px;align-items:start}.about-bio{grid-column:span 6}.about-areas{grid-column:8/span 5;display:flex;flex-direction:column;align-items:flex-end;text-align:right}.about-areas p{margin:0;font-size:clamp(18px,2.1vw,27px);line-height:1.38;font-weight:600}.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.work-card{padding:0;display:flex;flex-direction:column;gap:16px;min-height:200px}.work-step{width:10px;height:10px;border-radius:50%;background:var(--fg,#000);display:inline-block}.work-card:nth-child(2) .work-step{width:15px;height:15px}.work-card:nth-child(3) .work-step{width:20px;height:20px}.work-card:nth-child(4) .work-step{width:25px;height:25px}.work-card p{margin:0}.work-card .title{font-size:18px;font-weight:600}.work-card .text{font-size:16px;line-height:1.7}.skill-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 24px}.skill-col{display:flex;flex-direction:column;gap:8px}.skill-col p{margin:0;font-size:16px;line-height:1.5;font-weight:300}.skill-col .heading{margin:0 0 8px;font-size:18px;font-weight:600}.photo-editorial{display:flex;align-items:center;justify-content:center;border:1px solid {{line}};background:linear-gradient(135deg, rgba(248,190,214,.15), rgba(248,190,214,.04));color:{{fg}};text-align:center;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:400;overflow:hidden}.photo-editorial--vertical{aspect-ratio:4 / 5}.photo-editorial--wide{aspect-ratio:16 / 7}.photo-editorial--pending::before{content:'';display:block;width:56px;height:56px;border-radius:50%;background:#F8BED6;opacity:.35;margin:0 auto 12px}.@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}.about-grid{gap:32px 20px}.about-bio,.about-areas{grid-column:span 12}.about-areas{align-items:flex-start;text-align:left}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}.work-grid{grid-template-columns:1fr}.skill-columns{grid-template-columns:1fr}.about-hero-title{font-size:clamp(42px,13vw,88px)}}
 </style>
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
-<header id="top" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px">
+<header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}; border-bottom: 1px solid {{line}}">
 <a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <div style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
@@ -121,22 +98,20 @@ a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4p
 </section>
 <footer style="overflow: hidden; border-top: 1px solid {{line}}">
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 40px; padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px 40px; justify-content: space-between; align-items: flex-start">
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">
-<span>Santiago • CL</span>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; min-width: 220px">
+<span>SANTIAGO • CL</span>
 <span>© 2026 SHAFORM</span>
+<span>LO INVISIBLE HECHO FORMA</span>
 </div>
-<nav aria-label="Pie" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
-<a class="lnk" href="../Inicio-html/Main.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Inicio</a><a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Proyectos</a><a class="lnk" href="SobreMi.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Sobre mí</a><a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="min-height: 36px; display: inline-flex; align-items: center">Hablemos</a>
-</nav>
-<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0; font-size: 15px">
+<div style="flex: 1 1 0; min-height: 1px"></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0; font-size: 15px; min-width: 220px">
 <a class="lnk" href="mailto:byshaform@gmail.com" style="min-height: 36px; display: inline-flex; align-items: center">Email</a>
 <a class="lnk" href="https://instagram.com/byshaform" style="min-height: 36px; display: inline-flex; align-items: center">Instagram</a>
-<a class="lnk" href="https://www.behance.net/" style="min-height: 36px; display: inline-flex; align-items: center">Behance</a>
-<a class="lnk" href="#top" style="min-height: 36px; display: inline-flex; align-items: center; margin-top: 8px">Volver arriba ↑</a>
+<span class="lnk" style="min-height: 36px; display: inline-flex; align-items: center">LinkedIn</span>
 </div>
 </div>
-<a href="../Inicio-html/Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden">
-<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto">
+<a href="../Inicio-html/Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden; transform: translateY(12px)">
+<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
 </a>
 </footer>
 </div>
