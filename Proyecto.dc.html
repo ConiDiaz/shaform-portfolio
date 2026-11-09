@@ -15,6 +15,15 @@
 <style>
 html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
+<style>
+header#top{max-width:none!important;margin:0!important;padding-left:max(calc((100vw - 1152px)/2),clamp(20px,5vw,64px))!important;padding-right:max(calc((100vw - 1152px)/2),clamp(20px,5vw,64px))!important}
+footer{border-top:0!important}
+footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
+footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
+footer>a img{display:block;width:100%;height:auto;transform:none!important}
+@media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}; border-bottom: 1px solid {{line}}">
@@ -38,24 +47,30 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-ser
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: end">
 <p class="span-s" style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; grid-column: span 7">Identidad visual del Centro de Documentación del Museo Nacional de Bellas Artes.</p>
 <dl class="span-s" style="margin: 0; grid-column: 9 / span 4; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; font-size: 15px">
-<div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Año</dt><dd style="margin: 4px 0 0">2026</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Tipo</dt><dd style="margin: 4px 0 0">Identidad visual</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Para</dt><dd style="margin: 4px 0 0">MNBA</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Mi rol</dt><dd style="margin: 4px 0 0">[Rol o contexto]</dd></div>
+<div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Año</dt><dd style="margin: 4px 0 0">2026</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Tipo</dt><dd style="margin: 4px 0 0">Identidad visual</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Para</dt><dd style="margin: 4px 0 0">MNBA</dd></div><sc-if value="{{rol}}" hint-placeholder-val="{{''}}"><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Mi rol</dt><dd style="margin: 4px 0 0">{{rol}}</dd></div></sc-if>
 </dl>
 </div>
 </section>
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%"><img class="rev" src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Papelería del Centro de Documentación: carpetas, sobres y credenciales" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
 <section id="proceso" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(56px, 7vw, 88px)">
+<sc-if value="{{contexto}}" hint-placeholder-val="{{''}}">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
 <h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Contexto</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 16px; line-height: 1.7; font-size: 18px">[Quién es el Centro de Documentación, qué guarda y qué pasaba antes del proyecto.]</p></div>
+<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 18px; line-height: 1.7">{{contexto}}</p></div>
 </div>
+</sc-if>
+<sc-if value="{{problema}}" hint-placeholder-val="{{''}}">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
 <h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Problema</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; font-size: clamp(24px, 3vw, 40px); line-height: 1.25">“[¿Qué problema o pregunta dio inicio al proyecto?]”</p></div>
+<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(24px, 3vw, 40px); line-height: 1.25; font-weight: 300">{{problema}}</p></div>
 </div>
+</sc-if>
+<sc-if value="{{objetivos}}" hint-placeholder-val="{{''}}">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
 <h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Objetivos</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px"><div style="display: flex; flex-direction: column; gap: 14px"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{fg}}"></span><p style="margin: 0; font-size: 16px; line-height: 1.7">[Objetivo 1]</p></div><div style="display: flex; flex-direction: column; gap: 14px"><span style="width: 14px; height: 14px; border-radius: 50%; background: {{fg}}"></span><p style="margin: 0; font-size: 16px; line-height: 1.7">[Objetivo 2]</p></div><div style="display: flex; flex-direction: column; gap: 14px"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{fg}}"></span><p style="margin: 0; font-size: 16px; line-height: 1.7">[Objetivo 3]</p></div></div></div>
+<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 16px; line-height: 1.7">{{objetivos}}</p></div>
 </div>
+</sc-if>
 <sc-if value="{{colaboradores}}" hint-placeholder-val="{{''}}">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
 <h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Colaboradores</h2>
@@ -76,12 +91,12 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-ser
 </sc-if>
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
 <h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Resultado</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><img class="rev" src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Sistema de papelería del Centro de Documentación" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 24px"><div style="aspect-ratio: 4 / 3; border: 1px dashed {{line}}; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 300; text-align: center; padding: 16px">[Detalle: credenciales]</div><div style="aspect-ratio: 4 / 3; border: 1px dashed {{line}}; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 300; text-align: center; padding: 16px">[Detalle: Inventario general]</div></div></div>
+<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><img class="rev" src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Sistema de papelería del Centro de Documentación" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
 </div>
 <sc-if value="{{fraseCierre}}" hint-placeholder-val="{{''}}">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Lo que quedó</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300">{{fraseCierre}}</p></div>
+<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Cierre</h2>
+<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.2; font-weight: 600">{{fraseCierre}}</p></div>
 </div>
 </sc-if>
 </section>
@@ -91,7 +106,7 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-ser
 <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{fg}}"></span>Centro de Documentación del MNBA</span>
 </div>
 </section>
-<footer style="overflow: hidden; border-top: 1px solid {{line}}">
+<footer style="overflow: hidden">
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 40px; padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px 40px; justify-content: space-between; align-items: flex-start">
 <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; min-width: 220px">
 <span>SANTIAGO • CL</span>
@@ -128,6 +143,10 @@ class Component extends DCLogic {
       logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
       filtro: 'none',
       colaboradores: colaboradores,
+      rol: st.rol || '',
+      contexto: st.contexto || '',
+      problema: st.problema || '',
+      objetivos: Array.isArray(st.objetivos) ? st.objetivos.join(' · ') : (st.objetivos || ''),
       decisiones: st.decisiones || '',
       fraseCierre: st.fraseCierre || '',
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
