@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>SHAFORM — Centro de Documentación del MNBA</title>
+<script src="./theme.js"></script>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./project-data.js"></script>
@@ -29,6 +30,9 @@ header#top .lnk{ text-decoration:none!important;transition:color .25s ease}
 header#top .lnk:hover{color:#F8BED6}
 header#top .lnk{position:relative;z-index:1;text-decoration:none!important;transition:color .25s ease}
 header#top .lnk:hover,header#top .lnk[aria-current="page"]{color:#F8BED6;text-decoration:none!important}
+.m-sombra header#top .navlinks .lnk,.m-sombra header#top .navlinks .lnk[aria-current="page"]{color:#FFFFFF!important;text-decoration:none!important}
+.m-luz header#top .navlinks .lnk,.m-luz header#top .navlinks .lnk[aria-current="page"]{color:#000000!important;text-decoration:none!important}
+header#top .navlinks .lnk:hover,header#top .navlinks .lnk[aria-current="page"]:hover{color:#F8BED6!important}
 header#top .navlinks .lnk[aria-current="page"]::before{content:"";position:absolute;left:-14px;top:50%;width:7px;height:7px;border-radius:50%;background:#F8BED6;transform:translateY(-50%)}
 footer{border-top:0!important}
 footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
@@ -39,7 +43,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-title{font-size:clamp(40px,6.4vw,88px)!important}
 .project-intro-grid{gap:24px!important;align-items:end!important}
 .project-summary{width:calc(100% + 24px);margin:0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;font-weight:300}
-.project-meta{width:600px;max-width:calc(100% - 50px);margin:0 0 0 50px;display:grid;grid-template-columns:325px 267px;align-content:start;gap:8px;font-size:11px}
+.project-meta{width:560px;max-width:100%;margin:0 0 0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;font-size:11px}
 .project-meta>div{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;gap:0 8px}
 .project-meta dt,.project-label{font-size:9px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .project-meta dd{margin:0;line-height:1.3}
@@ -86,7 +90,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-reflection{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 24px;border-top:1px solid rgba(0,0,0,.16);padding-top:var(--project-section-inset)}
 .project-reflection h2{grid-column:span 3;margin:0;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .project-reflection p{grid-column:5/span 8;margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
-@media(max-width:1200px){.project-intro-grid{grid-template-columns:1fr!important;gap:20px!important}.project-intro-grid>.span-s{grid-column:1!important}.project-summary{width:auto;max-width:500px}.project-meta{width:600px;max-width:100%;margin-left:0}}
+@media(max-width:1200px){.project-intro-grid{grid-template-columns:1fr!important;gap:20px!important}.project-intro-grid>.span-s{grid-column:1!important}.project-summary{width:auto;max-width:500px}.project-meta{width:100%;max-width:100%;margin-left:0}}
 @media(max-width:760px){:root{--project-section-inset:32px;--project-section-gap:40px;--project-section-space:72px;--project-paragraph-gap:24px}.project-meta{width:100%;grid-template-columns:1fr}.project-meta .meta-year,.project-meta .meta-category,.project-meta .meta-context,.project-meta .meta-role{grid-column:1}.project-meta .meta-year{grid-row:1}.project-meta .meta-context{grid-row:2}.project-meta .meta-role{grid-row:3}.project-meta .meta-category{grid-row:4}.project-row h2,.project-row>div,.project-reflection h2,.project-reflection p{grid-column:1/-1}.project-objectives{grid-template-columns:1fr;gap:28px}.project-objective .sc-interp{white-space:normal}.project-gallery{grid-template-columns:1fr}.project-gallery figure,.project-gallery figure:first-child:nth-last-child(1){grid-column:1}.project-reflection{gap:24px}.project-transition{padding-top:40px;gap:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
@@ -192,7 +196,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 class Component extends DCLogic {
   renderVals() {
     var st = this.state || {};
-    var modo = st.modo || this.props.modoInicial || 'sombra';
+    var modo = window.SHAFORM_THEME || st.modo || this.props.modoInicial || 'sombra';
     var s = modo === 'sombra';
     var K = '#000000', P = '#FFFFFF';
     var self = this;
@@ -247,9 +251,9 @@ class Component extends DCLogic {
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
       tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
-      irSombra: function () { self.setState({ modo: 'sombra' }); },
-      irLuz: function () { self.setState({ modo: 'luz' }); },
-      alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
+      irSombra: function () { window.SHAFORM_SET_THEME('sombra'); self.setState({ modo: 'sombra' }); },
+      irLuz: function () { window.SHAFORM_SET_THEME('luz'); self.setState({ modo: 'luz' }); },
+      alternar: function () { var nuevoModo = s ? 'luz' : 'sombra'; window.SHAFORM_SET_THEME(nuevoModo); self.setState({ modo: nuevoModo }); }
     };
 
     return v;

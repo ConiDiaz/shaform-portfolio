@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>SHAFORM — Sobre mí</title>
+<script src="../theme.js"></script>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./support.js"></script>
@@ -13,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
 <style>
-html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}.about-hero-title{font-size:clamp(52px,9vw,128px);line-height:1;word-break:break-word}.about-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px 24px;align-items:start}.about-bio{grid-column:span 6}.about-areas{grid-column:8/span 5;display:flex;flex-direction:column;align-items:flex-end;text-align:right}.about-areas p{margin:0;font-size:clamp(18px,2.1vw,27px);line-height:1.38;font-weight:600}.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.work-card{padding:0;display:flex;flex-direction:column;gap:16px;min-height:200px}.work-step{width:10px;height:10px;border-radius:50%;background:var(--fg,#000);display:inline-block}.work-card:nth-child(2) .work-step{width:15px;height:15px}.work-card:nth-child(3) .work-step{width:20px;height:20px}.work-card:nth-child(4) .work-step{width:25px;height:25px}.work-card p{margin:0}.work-card .title{font-size:18px;font-weight:600}.work-card .text{font-size:16px;line-height:1.7}.skill-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 24px}.skill-col{display:flex;flex-direction:column;gap:8px}.skill-col p{margin:0;font-size:16px;line-height:1.5;font-weight:300}.skill-col .heading{margin:0 0 8px;font-size:18px;font-weight:600}.photo-editorial{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:linear-gradient(135deg, rgba(248,190,214,.15), rgba(248,190,214,.04));color:var(--fg);text-align:center;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:400;overflow:hidden}.photo-editorial--vertical{aspect-ratio:4 / 5}.photo-editorial--wide{aspect-ratio:16 / 7}.photo-editorial--pending::before{content:'';display:block;width:56px;height:56px;border-radius:50%;background:#F8BED6;opacity:.35;margin:0 auto 12px}.@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}.about-grid{gap:32px 20px}.about-bio,.about-areas{grid-column:span 12}.about-areas{align-items:flex-start;text-align:left}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}.work-grid{grid-template-columns:1fr}.skill-columns{grid-template-columns:1fr}.about-hero-title{font-size:clamp(42px,13vw,88px)}}
+html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}.about-hero-title{font-size:clamp(42px,7.3vw,100px);line-height:1;white-space:nowrap}.about-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px 24px;align-items:start}.about-bio{grid-column:span 8}.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.work-card{padding:0;display:flex;flex-direction:column;gap:16px;min-height:200px}.work-step{width:10px;height:10px;border-radius:50%;background:var(--fg,#000);display:inline-block}.work-card:nth-child(2) .work-step{width:15px;height:15px}.work-card:nth-child(3) .work-step{width:20px;height:20px}.work-card:nth-child(4) .work-step{width:25px;height:25px}.work-card p{margin:0}.work-card .title{font-size:18px;font-weight:600}.work-card .text{font-size:16px;line-height:1.7}.skill-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 24px}.skill-col{display:flex;flex-direction:column;gap:8px}.skill-col p{margin:0;font-size:16px;line-height:1.5;font-weight:300}.skill-col .heading{margin:0 0 8px;font-size:18px;font-weight:600}.photo-editorial{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:linear-gradient(135deg, rgba(248,190,214,.15), rgba(248,190,214,.04));color:var(--fg);text-align:center;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:400;overflow:hidden}.photo-editorial--vertical{aspect-ratio:4 / 5}.photo-editorial--wide{aspect-ratio:16 / 7}.photo-editorial--pending::before{content:'';display:block;width:56px;height:56px;border-radius:50%;background:#F8BED6;opacity:.35;margin:0 auto 12px}.@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}.about-grid{gap:32px 20px}.about-bio{grid-column:span 12}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}.work-grid{grid-template-columns:1fr}.skill-columns{grid-template-columns:1fr}.about-hero-title{font-size:clamp(30px,8.5vw,54px);white-space:normal;word-break:normal}}
 </style>
 <style>
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){body,body *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23F8BED6'/%3E%3C/svg%3E") 8 8,auto!important}}
@@ -27,15 +28,19 @@ header#top .lnk{ text-decoration:none!important;transition:color .25s ease}
 header#top .lnk:hover{color:#F8BED6}
 header#top .lnk{position:relative;z-index:1;text-decoration:none!important;transition:color .25s ease}
 header#top .lnk:hover,header#top .lnk[aria-current="page"]{color:#F8BED6;text-decoration:none!important}
+.m-sombra header#top .navlinks .lnk,.m-sombra header#top .navlinks .lnk[aria-current="page"]{color:#FFFFFF!important;text-decoration:none!important}
+.m-luz header#top .navlinks .lnk,.m-luz header#top .navlinks .lnk[aria-current="page"]{color:#000000!important;text-decoration:none!important}
+header#top .navlinks .lnk:hover,header#top .navlinks .lnk[aria-current="page"]:hover{color:#F8BED6!important}
 header#top .navlinks .lnk[aria-current="page"]::before{content:"";position:absolute;left:-14px;top:50%;width:7px;height:7px;border-radius:50%;background:#F8BED6;transform:translateY(-50%)}
 footer{border-top:0!important}
 footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
-.about-areas p{font-size:clamp(16px,1.35vw,17px);line-height:1.45;font-weight:400}
 .photo-editorial--pending{box-sizing:border-box;flex-direction:column;gap:12px;padding:24px}
 .photo-editorial--wide{aspect-ratio:4/3}
-@media(max-width:760px){.about-areas p{font-size:18px}}
+@media(min-width:761px){:root{--about-photo-gap:clamp(32px,5vw,48px)}.about-intro{padding-bottom:0!important}.about-intro+.about-photo{margin-top:var(--about-photo-gap)}.about-bio-section{padding-top:calc(var(--about-photo-gap) + 80px)!important;padding-bottom:calc(var(--about-photo-gap) + 60px)!important}.about-work-section{padding-bottom:var(--about-photo-gap)!important}.about-process-photo{padding-bottom:calc(var(--about-photo-gap) + 60px)!important}}
+@media(max-width:760px){:root{--about-photo-gap:32px}.about-intro{padding-bottom:0!important}.about-intro+.about-photo{margin-top:var(--about-photo-gap)}.about-bio-section{padding-top:calc(var(--about-photo-gap) + 64px)!important;padding-bottom:calc(var(--about-photo-gap) + 44px)!important}.about-work-section{padding-bottom:var(--about-photo-gap)!important}.about-process-photo{padding-bottom:calc(var(--about-photo-gap) + 44px)!important}}
+.trajectory-section>div[style*="border-bottom"]:last-child{border-bottom:0!important}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
@@ -56,49 +61,40 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid {{fg}}; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
 </div>
 </header>
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
+<section class="about-intro" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
 <h1 class="about-hero-title" style="margin: 0; font-weight: 600">Constanza Díaz Olguín</h1>
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: end">
 <p class="span-s" style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; grid-column: span 7">Antes de diseñar, pregunto. Me interesa la historia que hay detrás de cada idea y ordenarla con calma, hasta que se pueda ver.</p>
-<div class="span-s" style="grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.6">
+<div class="span-s" style="grid-column: 10 / span 3; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.6">
 <span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Diseñadora gráfica multimedial</span>
 <span>UNIACC · Santiago, Chile</span>
 </div>
 </div>
 </section>
 
-<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%"><img class="rev" src="./assets/3c6ee67c170d4a5aee268b34f0f45056.jpg" alt="Constanza Díaz agachada en un puente de madera en medio del bosque" style="display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 64%; filter: {{filtro}}"></div>
+<div class="about-photo" style="max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%"><img class="rev" src="./assets/3c6ee67c170d4a5aee268b34f0f45056.jpg" alt="Constanza Díaz agachada en un puente de madera en medio del bosque" style="display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 64%; filter: {{filtro}}"></div>
 
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px)">
+<section class="about-bio-section" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px)">
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px; align-items: start">
-<div class="about-bio span-s" style="grid-column: span 6; display: flex; flex-direction: column; gap: 18px">
+<div class="about-bio span-s" style="display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0 0 4px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Quién soy</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.7; font-size: 18px">Soy Constanza Díaz Olguín, diseñadora gráfica multimedial. Estudio en UNIACC y vivo en Santiago. Trabajo en identidad visual, diseño editorial e iconografía.</p>
 <p style="margin: 0; font-size: 16px; line-height: 1.7; font-size: 18px">SHAFORM nació de algo simple: que nadie tenga que llevar su idea solo.</p>
 </div>
-<div class="about-areas span-s" style="grid-column: 8 / span 5; display: flex; flex-direction: column; align-items: flex-end; text-align: right">
-<h2 style="margin: 0 0 16px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Lo que hago</h2>
-<p>Identidad visual y branding</p><p>Diseño gráfico y comunicación visual</p><p>Diseño editorial y maquetación</p><p>Interfaces (UI) y experiencia de usuario (UX)</p><p>Dirección de arte</p><p>Sistemas gráficos e iconografía</p><p>Packaging</p><p>Diseño de información e infografía</p><p>Fotografía, edición y retoque digital</p><p>Diseño digital e interactivo</p>
-</div>
-</div>
-<div style="display: flex; justify-content: flex-end; margin-top: 48px">
-<div class="photo-editorial photo-editorial--vertical photo-editorial--pending" role="img" aria-label="Espacio reservado para un retrato vertical; proporción 4 a 5, fotografía natural en un espacio de trabajo. Ubicación: junto a Quién soy y Lo que hago." style="width: min(100%, 360px)">
-<div><strong>FOTO 02 · RETRATO VERTICAL</strong><br>4:5 · Retrato natural en un espacio de trabajo sencillo.<br>Ubicación: junto a «Quién soy» y «Lo que hago».</div>
-</div>
 </div>
 </section>
 
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<section class="about-work-section" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
 <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid {{line}}; padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
 <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Cómo trabajo</span><h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.2; font-weight: 600">Con método, porque el orden da calma.</h2></div>
 
 </div>
 <div class="work-grid">
-<div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Escucho</p><p class="text">Primero la historia, después la forma.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Ordeno</p><p class="text">Cada paso queda anotado en una bitácora.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Pruebo</p><p class="text">Bocetamos antes de decidir, juntas.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Me quedo hasta el punto</p><p class="text">Entrego la marca y todo su archivo ordenado.</p></div>
+<div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Escucho</p><p class="text">Primero escucho la historia, después la forma.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Ordeno</p><p class="text">Cada paso queda anotado en una bitácora.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Pruebo</p><p class="text">Bocetamos ideas juntas antes<br>de decidir, juntas.</p></div><div class="work-card"><span class="work-step" style="background: {{fg}}"></span><p class="title">Me quedo hasta el punto</p><p class="text">Entrego la marca y todo su archivo ordenado.</p></div>
 </div>
 </section>
 
-<section aria-label="Fotografía de proceso pendiente" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(40px, 6vw, 80px); display: flex; justify-content: flex-end">
+<section class="about-process-photo" aria-label="Fotografía de proceso pendiente" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(40px, 6vw, 80px); display: flex; justify-content: flex-end">
 <div class="photo-editorial photo-editorial--wide photo-editorial--pending" role="img" aria-label="Espacio reservado para una fotografía horizontal del proceso creativo; proporción 4 a 3, trabajando con impresos, libretas o herramientas de diseño. Ubicación: entre Cómo trabajo y Habilidades e intereses." style="width: min(100%, 560px)">
 <div><strong>FOTO 03 · PROCESO CREATIVO</strong><br>4:3 · Trabajando con impresos, libretas o herramientas de diseño.<br>Ubicación: entre «Cómo trabajo» y «Habilidades e intereses».</div>
 </div>
@@ -110,7 +106,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 
 </div>
 <div class="skill-columns">
-<div class="skill-col"><p class="heading">Diseño</p><p>Identidad visual</p><p>Diseño editorial y de información</p><p>Iconografía y semiótica</p><p>Tipografía y composición</p><p>Interfaces y packaging</p><p>Dirección de arte</p></div><div class="skill-col"><p class="heading">Herramientas</p><p>Adobe Illustrator</p><p>Adobe Photoshop</p><p>Adobe InDesign</p><p>Adobe After Effects</p><p>Adobe Fresco</p><p>Figma</p><p>Canva</p><p>Visual Studio Code</p></div><div class="skill-col"><p class="heading">Código e interactividad</p><p>HTML / CSS</p><p>JavaScript</p><p>React</p><p>p5.js</p><p>Processing</p></div><div class="skill-col"><p class="heading">Idiomas</p><p>Español</p><p>Inglés</p><p>Chino mandarín</p></div>
+<div class="skill-col"><p class="heading">Diseño</p><p>Identidad visual y branding</p><p>Diseño gráfico y comunicación visual</p><p>Diseño editorial y maquetación</p><p>Diseño de información e infografía</p><p>Iconografía y semiótica</p><p>Tipografía y composición</p><p>Dirección de arte</p><p>Diseño UX/UI</p><p>Diseño de packaging</p><p>Fotografía, edición y retoque</p><p>Sistemas gráficos</p></div><div class="skill-col"><p class="heading">Herramientas</p><p>Adobe Illustrator</p><p>Adobe Photoshop</p><p>Adobe InDesign</p><p>Adobe After Effects</p><p>Adobe Fresco</p><p>Visual Studio Code</p><p>Figma</p><p>Canva</p></div><div class="skill-col"><p class="heading">Código e interactividad</p><p>HTML / CSS</p><p>JavaScript</p><p>Processing</p><p>React</p><p>p5.js</p></div><div class="skill-col"><p class="heading">Idiomas</p><p>Español</p><p>Inglés</p><p>Chino mandarín</p></div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 48px">
 <span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; margin-right: 12px">Me interesa explorar</span>
@@ -118,7 +114,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </section>
 
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<section class="trajectory-section" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
 <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid {{line}}; padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
 <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Trayectoria</span></div>
 
@@ -155,7 +151,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 class Component extends DCLogic {
   renderVals() {
     var st = this.state || {};
-    var modo = st.modo || this.props.modoInicial || 'sombra';
+    var modo = window.SHAFORM_THEME || st.modo || this.props.modoInicial || 'sombra';
     var s = modo === 'sombra';
     var K = '#000000', P = '#FFFFFF';
     var self = this;
@@ -169,9 +165,9 @@ class Component extends DCLogic {
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
       tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
-      irSombra: function () { self.setState({ modo: 'sombra' }); },
-      irLuz: function () { self.setState({ modo: 'luz' }); },
-      alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
+      irSombra: function () { window.SHAFORM_SET_THEME('sombra'); self.setState({ modo: 'sombra' }); },
+      irLuz: function () { window.SHAFORM_SET_THEME('luz'); self.setState({ modo: 'luz' }); },
+      alternar: function () { var nuevoModo = s ? 'luz' : 'sombra'; window.SHAFORM_SET_THEME(nuevoModo); self.setState({ modo: nuevoModo }); }
     };
 
     return v;
