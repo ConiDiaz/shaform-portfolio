@@ -5,6 +5,7 @@
 <title>SHAFORM — Inicio</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
+<script src="../project-data.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -33,10 +34,12 @@ footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .home-about-name{white-space:nowrap}
+.home-ph-placeholder{display:flex;height:100%;box-sizing:border-box;align-items:center;justify-content:center;border:1px solid {{line}};font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .about-home-photo{overflow:hidden}
 .about-home-photo .rev{filter:grayscale(100%)!important;transition:filter .6s ease,transform .6s ease}
 .about-home-photo:hover .rev{filter:none!important;transform:scale(1.03)!important}
-@media(max-width:760px){.home-intro{grid-template-columns:1fr!important;gap:24px!important}.home-intro>div:last-child{max-width:none!important}}
+.home-intro{align-items:end!important}
+@media(max-width:760px){.home-intro{grid-template-columns:1fr!important;gap:24px!important;align-items:start!important}.home-intro>div:last-child{max-width:none!important}}
 @media(hover:none),(pointer:coarse){.home-card img{filter:none!important}}
 @media(hover:none),(pointer:coarse){.about-home-photo .rev{filter:none!important;transform:none!important}}
 @media(max-width:760px){.home-about-name{white-space:normal}}
@@ -90,23 +93,15 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="font-size: 15px; min-height: 44px; display: inline-flex; align-items: center">Ver todos los proyectos →</a>
 </div>
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
-<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/4a9044e1ee3ba53c9aec634fa5d2cb9a.jpg" alt="Plataforma Mindly en un portátil sobre un sillón azul" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Mindly</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">UX/UI</span></div>
+<sc-for list="{{trabajosSeleccionados}}" as="p" hint-placeholder-count="4">
+<a class="pj home-card" href="{{p.href}}" style="grid-column: span {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}">
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span class="home-ph-placeholder">{{p.placeholder}}</span></sc-if>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.category}}</span></div>
 </a>
-<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/30dcb9ff8072b4ef7e28834a4d04ff91.jpg" alt="Botellas de cerveza Lafken" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Lafken</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Identidad</span></div>
-</a>
-<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/495d68695761413f5b19c6c9b7718e0e.jpg" alt="Fotolibro Thanatos de tapa negra" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Thanatos</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Editorial</span></div>
-</a>
-<a class="pj home-card" href="../Proyecto.dc.html" style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}"><img src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Papelería del Centro de Documentación del MNBA" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>Centro de Documentación MNBA</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Identidad</span></div>
-</a>
-
+</sc-for>
 </div>
 </section>
 
@@ -170,6 +165,7 @@ class Component extends DCLogic {
     var s = modo === 'sombra';
     var K = '#000000', P = '#FFFFFF';
     var self = this;
+    var projects = window.SHAFORM_PROJECTS || [];
     var v = {
       esSombra: s, esLuz: !s,
       modoClass: s ? 'm-sombra' : 'm-luz',
@@ -184,6 +180,19 @@ class Component extends DCLogic {
       irLuz: function () { self.setState({ modo: 'luz' }); },
       alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
     };
+    var selectedIds = ['thanatos', 'lafken', 'vestigio', 'republica-marrana'];
+    v.trabajosSeleccionados = selectedIds.map(function (id, index) {
+      var project = projects.filter(function (p) { return p.id === id; })[0];
+      return {
+        name: project.name,
+        category: project.homeCategory,
+        img: project.image ? './assets/' + project.image : '',
+        alt: project.imageAlt,
+        placeholder: project.image ? '' : 'Imagen próximamente',
+        href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(project.id),
+        span: index === 0 || index === 3 ? 8 : 4
+      };
+    });
     v.etiquetaModo = s ? 'SOMBRA EL PROCESO' : 'LUZ EL RESULTADO';
     v.puntoLabel = s ? 'Cambiar a luz' : 'Cambiar a sombra';
     return v;

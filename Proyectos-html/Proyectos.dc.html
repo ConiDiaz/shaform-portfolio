@@ -5,6 +5,7 @@
 <title>SHAFORM — Proyectos</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
+<script src="../project-data.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -13,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
 <style>
-html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
+html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{filter:none!important;transition:transform .6s ease}.pj:hover img{transform:scale(1.03)}.pj .ph-placeholder{display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:24px;border:1px solid {{line}};text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
 <style>
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){body,body *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23F8BED6'/%3E%3C/svg%3E") 8 8,auto!important}}
@@ -73,7 +74,10 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
 <sc-for list="{{lista}}" as="p" hint-placeholder-count="8">
 <a class="pj" href="{{p.href}}" style="grid-column: {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: {{p.h}}; background: {{line}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
+<div class="ph {{p.phClass}}" style="height: {{p.h}}; background: {{line}}">
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span>{{p.placeholder}}</span></sc-if>
+</div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.cat}}</span></div>
 </a>
 </sc-for>
@@ -127,32 +131,44 @@ class Component extends DCLogic {
       irLuz: function () { self.setState({ modo: 'luz' }); },
       alternar: function () { self.setState({ modo: s ? 'luz' : 'sombra' }); }
     };
-    var P = [
-      { name: 'Mindly', cat: 'UX/UI', k: ['uxui','digital'], img: './assets/4a9044e1ee3ba53c9aec634fa5d2cb9a.jpg', alt: 'Plataforma Mindly en un portátil', href: '../Proyecto.dc.html' },
-      { name: 'Lafken', cat: 'Identidad', k: ['identidad'], img: './assets/30dcb9ff8072b4ef7e28834a4d04ff91.jpg', alt: 'Botellas de cerveza Lafken', href: '../Proyecto.dc.html' },
-      { name: 'Thanatos', cat: 'Editorial', k: ['editorial'], img: './assets/495d68695761413f5b19c6c9b7718e0e.jpg', alt: 'Fotolibro Thanatos', href: '../Proyecto.dc.html' },
-      { name: 'Centro de Documentación MNBA', cat: 'Identidad', k: ['identidad'], img: './assets/30c82996a72b31768aa59cb6f146c9d5.jpg', alt: 'Papelería del Centro de Documentación', href: '../Proyecto.dc.html' },
-      { name: 'Silos', cat: 'Gráfico', k: ['grafico'], img: './assets/3286289044750502c148f1af223a932a.jpg', alt: 'Espécimen tipográfico de Silos', href: '../Proyecto.dc.html' },
-      { name: 'Manos del Pasado', cat: 'Gráfico', k: ['grafico'], img: './assets/f8f2241089428717f648177d486c87b8.jpg', alt: 'Afiche enmarcado de Manos del Pasado', href: '../Proyecto.dc.html' },
-      { name: 'Claws & Cats', cat: 'Digital', k: ['digital'], img: './assets/d4e32e301ab57b9bc176465b9bf1fda7.jpg', alt: 'Afiche de Claws and Cats', href: '../Proyecto.dc.html' },
-      { name: 'Manos Creativas', cat: 'Identidad', k: ['identidad'], img: './assets/3821c9a4c8e3cc6203b60a494b1e536e.jpg', alt: 'Feed de Instagram de Manos Creativas', href: '../Proyecto.dc.html' }
-    ];
-    var F = [['todos','Todos'],['identidad','Identidad'],['editorial','Editorial'],['grafico','Gráfico'],['digital','Digital'],['uxui','UX/UI']];
+    var projects = window.SHAFORM_PROJECTS;
+    var P = projects.map(function (p) {
+      return {
+        name: p.name,
+        cat: p.category,
+        k: p.filters,
+        img: p.image ? './assets/' + p.image : '',
+        alt: p.imageAlt,
+        placeholder: p.image ? '' : (p.id === 'proyecto-por-definir' ? 'Portada provisional' : 'Portada pendiente'),
+        phClass: p.image ? '' : 'ph-placeholder',
+        href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(p.id),
+        span: 'span ' + p.cardSpan,
+        h: p.cardSpan >= 8 ? 'clamp(320px, 42vw, 600px)' : 'clamp(280px, 32vw, 460px)'
+      };
+    });
+    var F = [['todos','Todos'],['fotografia','Fotografía'],['identidad','Identidad'],['interactivo','Interactivo'],['editorial','Editorial']];
     var f = st.filtro || 'todos';
     var L = P.filter(function (p) { return f === 'todos' || p.k.indexOf(f) >= 0; });
-    var T = [[8,4],[4,4,4],[4,8],[6,6]];
-    var R = { 1: [12], 2: [6,6], 3: [4,4,4] };
-    var H = { 1: 'clamp(320px, 44vw, 640px)', 2: 'clamp(300px, 36vw, 540px)', 3: 'clamp(240px, 26vw, 380px)' };
-    var out = [], i = 0, t = 0;
-    while (i < L.length) {
-      var row = T[t % T.length];
-      if (L.length - i < row.length) row = R[L.length - i];
-      for (var j = 0; j < row.length; j++) {
-        out.push(Object.assign({}, L[i + j], { span: 'span ' + row[j], h: H[row.length] }));
+    var rows = [], row = [], rowSpan = 0;
+    L.forEach(function (project, index) {
+      var span = Number(project.span.replace('span ', ''));
+      if (rowSpan && rowSpan + span > 12) {
+        rows.push({ indices: row, maxSpan: Math.max.apply(null, row.map(function (i) { return Number(L[i].span.replace('span ', '')); })) });
+        row = [];
+        rowSpan = 0;
       }
-      i += row.length; t++;
+      row.push(index);
+      rowSpan += span;
+    });
+    if (row.length) {
+      rows.push({ indices: row, maxSpan: Math.max.apply(null, row.map(function (i) { return Number(L[i].span.replace('span ', '')); })) });
     }
-    v.lista = out;
+    rows.forEach(function (currentRow) {
+      var height = currentRow.maxSpan >= 8 ? 'clamp(320px, 42vw, 600px)' :
+        (currentRow.maxSpan >= 6 ? 'clamp(300px, 36vw, 540px)' : 'clamp(280px, 32vw, 460px)');
+      currentRow.indices.forEach(function (index) { L[index].h = height; });
+    });
+    v.lista = L;
     v.chips = F.map(function (c) {
       var on = c[0] === f;
       return { label: c[1], on: on, border: on ? v.fg : v.line, dot: on ? '#F8BED6' : 'transparent', pick: function () { self.setState({ filtro: c[0] }); } };

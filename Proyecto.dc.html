@@ -5,6 +5,7 @@
 <title>SHAFORM — Centro de Documentación del MNBA</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
+<script src="./project-data.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -13,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
 <style>
+:root{--project-section-inset:48px;--project-section-gap:64px;--project-section-space:112px;--project-paragraph-gap:32px}
 html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{transition:transform .6s ease,filter .6s ease}.pj:hover img,.rev:hover{filter:none !important}.pj:hover img{transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
 <style>
@@ -33,6 +35,59 @@ footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
+.project-intro{gap:20px!important;padding-top:clamp(24px,4vw,56px)!important;padding-bottom:clamp(24px,3vw,40px)!important}
+.project-title{font-size:clamp(40px,6.4vw,88px)!important}
+.project-intro-grid{gap:24px!important;align-items:end!important}
+.project-summary{width:calc(100% + 24px);margin:0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;font-weight:300}
+.project-meta{width:600px;max-width:calc(100% - 50px);margin:0 0 0 50px;display:grid;grid-template-columns:325px 267px;align-content:start;gap:8px;font-size:11px}
+.project-meta>div{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;gap:0 8px}
+.project-meta dt,.project-label{font-size:9px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.project-meta dd{margin:0;line-height:1.3}
+.project-meta .meta-year{grid-column:1;grid-row:1}
+.project-meta .meta-category{grid-column:2;grid-row:2}
+.project-meta .meta-context{grid-column:1;grid-row:2}
+.project-meta .meta-role{grid-column:2;grid-row:1}
+.project-story{display:flex;flex-direction:column;gap:var(--project-section-gap)}
+.project-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 24px;border-top:1px solid rgba(0,0,0,.16);padding-top:var(--project-section-inset)}
+.project-row h2{grid-column:span 3;margin:0;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.project-row>div{grid-column:5/span 8;min-width:0}
+.project-row--objectives h2{grid-column:span 2}
+.project-row--objectives>div{grid-column:3/span 10}
+.project-row p{margin:0;font-size:18px;line-height:1.7}
+.project-row .project-challenge{font-size:clamp(24px,3vw,40px);line-height:1.25;font-weight:300}
+.project-cover{margin:0}
+.project-cover img{display:block;width:100%;height:auto;object-fit:contain;object-position:left center;filter:none!important}
+.project-placeholder{display:flex;min-height:clamp(220px,32vw,420px);box-sizing:border-box;align-items:center;justify-content:center;padding:24px;border:1px solid {{line}};text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.project-objectives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.project-objective{display:flex;flex-direction:column;gap:24px;text-align:left;font-size:16px;line-height:1.6}
+.project-objective:before{content:"";width:18px;height:18px;align-self:flex-start;flex:0 0 18px;border-radius:50%;background:radial-gradient(circle,#F8BED6 0 5px,transparent 5.5px)}
+.project-objective:nth-child(2):before{background:radial-gradient(circle,#F8BED6 0 7px,transparent 7.5px)}
+.project-objective:nth-child(3):before{background:#F8BED6}
+.project-objective .sc-interp{white-space:pre-line}
+.project-transition{position:relative;display:flex;max-width:1280px;width:100%;box-sizing:border-box;margin:0 auto;flex-direction:column;align-items:center;gap:32px;text-align:center;padding:56px clamp(20px,5vw,64px) var(--project-section-inset)}
+.project-transition:before,.project-transition:after{content:"";position:absolute;left:clamp(20px,5vw,64px);right:clamp(20px,5vw,64px);height:1px;background:rgba(0,0,0,.16)}
+.project-transition:before{display:none}
+.project-transition:after{bottom:0}
+#contenido{padding-top:var(--project-section-space)!important;padding-bottom:var(--project-section-gap)!important}
+#resultado{padding-top:var(--project-section-gap);padding-bottom:var(--project-section-space)!important}
+[aria-label="Lo que quedó"]{padding-bottom:var(--project-section-space)!important}
+.m-sombra .project-row,.m-sombra .project-reflection{border-color:rgba(255,255,255,.22)}
+.m-sombra .project-transition:before,.m-sombra .project-transition:after{background:rgba(255,255,255,.22)}
+.project-transition-circle{width:56px;height:56px;flex:0 0 auto;border-radius:50%;background:#F8BED6}
+.project-transition p{margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
+.project-description{display:flex;flex-direction:column;gap:var(--project-paragraph-gap)}
+.project-description p{margin:0;font-size:18px;line-height:1.7}
+.project-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.project-gallery figure{grid-column:span 6;margin:0;min-width:0}
+.project-gallery figure:first-child:nth-last-child(1){grid-column:span 12}
+.project-gallery img{display:block;width:100%;height:auto;filter:none!important}
+.project-gallery figcaption{padding-top:10px;font-size:12px;line-height:1.6}
+.gallery-placeholder{min-height:clamp(220px,28vw,360px)}
+.project-reflection{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 24px;border-top:1px solid rgba(0,0,0,.16);padding-top:var(--project-section-inset)}
+.project-reflection h2{grid-column:span 3;margin:0;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.project-reflection p{grid-column:5/span 8;margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
+@media(max-width:1200px){.project-intro-grid{grid-template-columns:1fr!important;gap:20px!important}.project-intro-grid>.span-s{grid-column:1!important}.project-summary{width:auto;max-width:500px}.project-meta{width:600px;max-width:100%;margin-left:0}}
+@media(max-width:760px){:root{--project-section-inset:32px;--project-section-gap:40px;--project-section-space:72px;--project-paragraph-gap:24px}.project-meta{width:100%;grid-template-columns:1fr}.project-meta .meta-year,.project-meta .meta-category,.project-meta .meta-context,.project-meta .meta-role{grid-column:1}.project-meta .meta-year{grid-row:1}.project-meta .meta-context{grid-row:2}.project-meta .meta-role{grid-row:3}.project-meta .meta-category{grid-row:4}.project-row h2,.project-row>div,.project-reflection h2,.project-reflection p{grid-column:1/-1}.project-objectives{grid-template-columns:1fr;gap:28px}.project-objective .sc-interp{white-space:normal}.project-gallery{grid-template-columns:1fr}.project-gallery figure,.project-gallery figure:first-child:nth-last-child(1){grid-column:1}.project-reflection{gap:24px}.project-transition{padding-top:40px;gap:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 </helmet>
@@ -52,69 +107,65 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid {{fg}}; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
 </div>
 </header>
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<a class="lnk" href="./Proyectos-html/Proyectos.dc.html" style="align-self: flex-start; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; min-height: 36px; display: inline-flex; align-items: center">← Proyectos</a>
-<h1 style="margin: 0; font-size: clamp(52px, 9vw, 128px); line-height: 1; font-weight: 600; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; max-width: 1100px">Centro de Documentación del MNBA</h1>
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: end">
-<p class="span-s" style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; grid-column: span 7">Identidad visual del Centro de Documentación del Museo Nacional de Bellas Artes.</p>
-<dl class="span-s" style="margin: 0; grid-column: 9 / span 4; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; font-size: 15px">
-<div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Año</dt><dd style="margin: 4px 0 0">2026</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Tipo</dt><dd style="margin: 4px 0 0">Identidad visual</dd></div><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Para</dt><dd style="margin: 4px 0 0">MNBA</dd></div><sc-if value="{{rol}}" hint-placeholder-val="{{''}}"><div><dt style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Mi rol</dt><dd style="margin: 4px 0 0">{{rol}}</dd></div></sc-if>
+<section class="project-intro" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
+<h1 class="project-title" style="margin: 0; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; font-weight: 600; max-width: 1100px">{{nombre}}</h1>
+<div class="project-intro-grid" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: start">
+<div class="span-s" style="grid-column: span 5; min-width: 0">
+<p class="project-summary">{{descripcionBreve}}</p>
+</div>
+<dl class="span-s project-meta" style="grid-column: 6 / span 7">
+<div class="meta-year"><dt>Año</dt><dd>{{anio}}</dd></div>
+<div class="meta-category"><dt>Categoría</dt><dd>{{categoria}}</dd></div>
+<div class="meta-context"><dt>Contexto</dt><dd>{{contextoCorto}}</dd></div>
+<div class="meta-role"><dt>Rol</dt><dd>{{rol}}</dd></div>
 </dl>
 </div>
 </section>
-<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%"><img class="rev" src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Papelería del Centro de Documentación: carpetas, sobres y credenciales" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
-<section id="proceso" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(56px, 7vw, 88px)">
-<sc-if value="{{contexto}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Contexto</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 18px; line-height: 1.7">{{contexto}}</p></div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%">
+<sc-if value="{{hasImage}}" hint-placeholder-val="{{false}}"><figure class="project-cover"><img src="{{coverSrc}}" alt="{{coverAlt}}"></figure></sc-if>
+<sc-if value="{{hasCoverPlaceholder}}" hint-placeholder-val="{{false}}"><div class="project-placeholder">{{coverPlaceholder}}</div></sc-if>
 </div>
-</sc-if>
-<sc-if value="{{problema}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Problema</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(24px, 3vw, 40px); line-height: 1.25; font-weight: 300">{{problema}}</p></div>
+<section id="contenido" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(56px, 7vw, 88px)">
+<div class="project-story">
+<div class="project-row">
+<h2 class="span-s">El proyecto</h2>
+<div class="span-s project-description"><sc-for list="{{descripcion}}" as="parrafo" hint-placeholder-count="2"><p>{{parrafo}}</p></sc-for></div>
 </div>
-</sc-if>
-<sc-if value="{{objetivos}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Objetivos</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 16px; line-height: 1.7">{{objetivos}}</p></div>
+<div class="project-row">
+<h2 class="span-s">Contexto</h2>
+<div class="span-s"><p>{{contexto}}</p></div>
 </div>
-</sc-if>
-<sc-if value="{{colaboradores}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Colaboradores</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 16px; line-height: 1.7">{{colaboradores}}</p></div>
+<div class="project-row">
+<h2 class="span-s">Desafío</h2>
+<div class="span-s"><p class="project-challenge">{{desafio}}</p></div>
 </div>
-</sc-if>
+<div class="project-row project-row--objectives">
+<h2 class="span-s">Objetivos</h2>
+<div class="span-s project-objectives"><sc-for list="{{objetivos}}" as="objetivo" hint-placeholder-count="3"><div class="project-objective">{{objetivo}}</div></sc-for></div>
+</div>
+</div>
 </section>
-<section aria-label="Transición al resultado" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; padding-bottom: clamp(72px, 9vw, 128px)">
-<span style="width: 56px; height: 56px; border-radius: 50%; background: #F8BED6"></span>
-<p style="margin: 0; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.2; font-weight: 600">Aquí la idea toma forma.</p>
+<section class="project-transition" aria-label="Aquí la idea toma forma">
+<span class="project-transition-circle" aria-hidden="true"></span>
+<p>Aquí la idea toma forma.</p>
 </section>
-<section id="resultado" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(56px, 7vw, 88px)">
-<sc-if value="{{decisiones}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Decisiones</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: 16px; line-height: 1.7">{{decisiones}}</p></div>
-</div>
-</sc-if>
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Resultado</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><img class="rev" src="./assets/30c82996a72b31768aa59cb6f146c9d5.jpg" alt="Sistema de papelería del Centro de Documentación" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
-</div>
-<sc-if value="{{fraseCierre}}" hint-placeholder-val="{{''}}">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid {{line}}; padding-top: 20px">
-<h2 class="span-s" style="grid-column: span 3; margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Cierre</h2>
-<div class="span-s" style="grid-column: 5 / span 8; min-width: 0"><p style="margin: 0; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.2; font-weight: 600">{{fraseCierre}}</p></div>
-</div>
-</sc-if>
+<section id="resultado" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: 24px">
+<h2 class="project-label" style="margin: 0">Resultado</h2>
+<div class="project-gallery"><sc-for list="{{galeria}}" as="item" hint-placeholder-count="3">
+<figure style="grid-column: {{item.span}}">
+<sc-if value="{{item.src}}" hint-placeholder-val="{{''}}"><img src="{{item.src}}" alt="{{item.alt}}"></sc-if>
+<sc-if value="{{item.placeholder}}" hint-placeholder-val="{{''}}"><div class="project-placeholder gallery-placeholder">{{item.placeholder}}</div></sc-if>
+<sc-if value="{{item.caption}}" hint-placeholder-val="{{''}}"><figcaption>{{item.caption}}</figcaption></sc-if>
+</figure>
+</sc-for></div>
+</section>
+<section aria-label="Lo que quedó" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<div class="project-reflection"><h2>Lo que quedó</h2><p>{{reflexion}}</p></div>
 </section>
 <section aria-label="Cierre del proyecto" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(56px, 7vw, 96px)">
 <div style="border-top: 1px solid {{line}}; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center">
 <a class="btn btn-line" href="./Proyectos-html/Proyectos.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">← Todos los proyectos</a>
-<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{fg}}"></span>Centro de Documentación del MNBA</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{fg}}"></span>{{nombre}}</span>
 </div>
 </section>
 <footer style="overflow: hidden">
@@ -145,21 +196,54 @@ class Component extends DCLogic {
     var s = modo === 'sombra';
     var K = '#000000', P = '#FFFFFF';
     var self = this;
-    var colaboradores = Array.isArray(st.colaboradores) ? st.colaboradores.join(', ') : (st.colaboradores || '');
+    var projects = window.SHAFORM_PROJECTS || [];
+    var projectId = new URLSearchParams(window.location.search).get('proyecto') || 'vestigio';
+    var project = projects.filter(function (p) { return p.id === projectId; })[0] ||
+      projects.filter(function (p) { return p.id === 'vestigio'; })[0] || projects[0];
+    var gallery = (project.gallery || []).map(function (item, index) {
+      return {
+        src: item.image ? './Proyectos-html/assets/' + item.image : '',
+        alt: item.alt || '',
+        caption: item.caption || '',
+        placeholder: item.placeholder || '',
+        span: item.span || (index === 0 ? 'span 12' : 'span 6')
+      };
+    });
+    if (!gallery.length) {
+      gallery = project.image ? [
+        { src: './Proyectos-html/assets/' + project.image, alt: project.imageAlt, caption: '', placeholder: '', span: 'span 12' }
+      ] : [
+        { src: '', alt: '', caption: '', placeholder: 'Imagen principal pendiente de incorporar.', span: 'span 12' }
+      ];
+      gallery.push(
+        { src: '', alt: '', caption: '', placeholder: 'Imagen secundaria pendiente de incorporar.', span: 'span 6' },
+        { src: '', alt: '', caption: '', placeholder: 'Imagen secundaria pendiente de incorporar.', span: 'span 6' }
+      );
+    }
+    document.title = 'SHAFORM — ' + project.name;
     var v = {
       esSombra: s, esLuz: !s,
       modoClass: s ? 'm-sombra' : 'm-luz',
       bg: s ? K : P, fg: s ? P : K,
       line: s ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.16)',
       logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
-      filtro: 'none',
-      colaboradores: colaboradores,
-      rol: st.rol || '',
-      contexto: st.contexto || '',
-      problema: st.problema || '',
-      objetivos: Array.isArray(st.objetivos) ? st.objetivos.join(' · ') : (st.objetivos || ''),
-      decisiones: st.decisiones || '',
-      fraseCierre: st.fraseCierre || '',
+      nombre: project.name,
+      categoria: project.category,
+      anio: project.year,
+      contextoCorto: project.contextLabel,
+      rol: project.role,
+      descripcionBreve: project.shortDescription,
+      descripcion: project.description,
+      contexto: project.context,
+      desafio: project.challenge,
+      objetivos: project.objectives,
+      reflexion: project.reflection,
+      hasImage: Boolean(project.image),
+      hasCoverPlaceholder: !project.image,
+      coverSrc: project.image ? './Proyectos-html/assets/' + project.image : '',
+      coverAlt: project.imageAlt,
+      coverPlaceholder: project.id === 'proyecto-por-definir' ? 'Portada provisional pendiente de definir.' : 'Portada pendiente de incorporar.',
+      galeria: gallery,
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
       tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',

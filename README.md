@@ -7,7 +7,14 @@ El proyecto está estructurado como un repositorio único con varias páginas te
 - Proyectos: `Proyectos-html/Proyectos.dc.html`
 - Sobre mí: `Sobre mí-html/SobreMi.dc.html`
 - Hablemos: `Hablemos-html/Hablemos.dc.html`
-- Proyecto destacado: `Proyecto — Centro de Documentación MNBA-html/Proyecto.dc.html`
+- Fichas individuales de proyectos: `Proyecto.dc.html`
+- Contenido compartido de los proyectos: `project-data.js`
+
+La galería y las fichas individuales usan los registros de `project-data.js`.
+Cada enlace añade el identificador del proyecto en la URL (por ejemplo,
+`Proyecto.dc.html?proyecto=thanatos`). Las imágenes se referencian por nombre
+de archivo dentro de `Proyectos-html/assets/`; las galerías admiten imágenes,
+texto alternativo, pies de foto y una posición de grilla opcional.
 
 ## Vista previa local
 
