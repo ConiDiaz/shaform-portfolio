@@ -95,7 +95,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-reflection p{grid-column:5/span 8;margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
 @media(max-width:1200px){.project-intro-grid{grid-template-columns:1fr!important;gap:20px!important}.project-intro-grid>.span-s{grid-column:1!important}.project-summary{width:auto;max-width:500px}.project-meta{width:100%;max-width:100%;margin-left:0}}
 @media(max-width:760px){:root{--project-section-inset:32px;--project-section-gap:40px;--project-section-space:72px;--project-paragraph-gap:24px}.project-meta{width:100%;grid-template-columns:1fr}.project-meta .meta-year,.project-meta .meta-category,.project-meta .meta-context,.project-meta .meta-role{grid-column:1}.project-meta .meta-year{grid-row:1}.project-meta .meta-context{grid-row:2}.project-meta .meta-role{grid-row:3}.project-meta .meta-category{grid-row:4}.project-row h2,.project-row>div,.project-reflection h2,.project-reflection p{grid-column:1/-1}.project-objectives{grid-template-columns:1fr;gap:28px}.project-objective .sc-interp{white-space:normal}.project-gallery{grid-template-columns:1fr}.project-gallery figure,.project-gallery figure:first-child:nth-last-child(1){grid-column:1}.project-reflection{gap:24px}.project-transition{padding-top:40px;gap:24px}}
-@media(max-width:760px){.project-gallery--thanatos figure,.project-gallery--vestigio figure,.project-gallery--republica-marrana figure,.project-gallery--un-instante-ya-fue figure{grid-column:1!important}}
+@media(max-width:760px){.project-gallery--thanatos figure,.project-gallery--vestigio figure,.project-gallery--republica-marrana figure,.project-gallery--un-instante-ya-fue figure,.project-gallery--shaform figure{grid-column:1!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 <link rel="stylesheet" href="./header-nav.css">
@@ -140,14 +140,14 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <h2 class="span-s">El proyecto</h2>
 <div class="span-s project-description"><sc-for list="{{descripcion}}" as="parrafo" hint-placeholder-count="2"><p>{{parrafo}}</p></sc-for></div>
 </div>
-<div class="project-row">
+<sc-if value="{{tieneContexto}}" hint-placeholder-val="{{false}}"><div class="project-row">
 <h2 class="span-s">Contexto</h2>
 <div class="span-s"><p>{{contexto}}</p></div>
-</div>
-<div class="project-row">
+</div></sc-if>
+<sc-if value="{{tieneDesafio}}" hint-placeholder-val="{{false}}"><div class="project-row">
 <h2 class="span-s">Desafío</h2>
 <div class="span-s"><p class="project-challenge">{{desafio}}</p></div>
-</div>
+</div></sc-if>
 <div class="project-row project-row--objectives">
 <h2 class="span-s">Objetivos</h2>
 <div class="span-s project-objectives"><sc-for list="{{objetivos}}" as="objetivo" hint-placeholder-count="3"><div class="project-objective">{{objetivo}}</div></sc-for></div>
@@ -181,7 +181,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </sc-if>
 <sc-if value="{{sinColaboradores}}" hint-placeholder-val="{{true}}">
-<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{fg}}"></span>{{nombre}}</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F8BED6"></span>{{nombre}}</span>
 </sc-if>
 </div>
 </section>
@@ -254,6 +254,8 @@ class Component extends DCLogic {
       descripcion: project.description,
       contexto: project.context,
       desafio: project.challenge,
+      tieneContexto: Boolean(project.context),
+      tieneDesafio: Boolean(project.challenge),
       objetivos: project.objectives,
       reflexion: project.reflection,
       colaboradores: project.collaborators || [],
@@ -265,7 +267,7 @@ class Component extends DCLogic {
       coverAlt: project.coverAlt || project.imageAlt,
       coverPlaceholder: project.id === 'proyecto-por-definir' ? 'Portada provisional pendiente de definir.' : 'Portada pendiente de incorporar.',
       galeria: gallery,
-      galeriaClass: project.id === 'thanatos' || project.id === 'vestigio' || project.id === 'republica-marrana' || project.id === 'un-instante-ya-fue' ? 'project-gallery--' + project.id : '',
+      galeriaClass: project.id === 'thanatos' || project.id === 'vestigio' || project.id === 'republica-marrana' || project.id === 'un-instante-ya-fue' || project.id === 'shaform' ? 'project-gallery--' + project.id : '',
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
       tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',

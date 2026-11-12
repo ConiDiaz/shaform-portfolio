@@ -139,21 +139,28 @@ window.SHAFORM_PROJECTS = [
     cardSpan: 6
   },
   {
-    id: 'proyecto-por-definir',
-    name: 'Proyecto por definir',
+    id: 'shaform',
+    name: 'SHAFORM',
     category: 'Editorial',
     filters: ['editorial'],
-    image: '',
-    imageAlt: '',
-    year: 'Por definir',
-    contextLabel: 'Por definir',
-    role: 'Por definir',
-    shortDescription: 'Una pieza editorial en desarrollo. Su nombre y contenido están pendientes de definir.',
-    description: ['Este espacio queda reservado para un próximo proyecto.'],
-    context: 'Por definir.',
-    challenge: 'Por definir.',
-    objectives: ['Por definir.', 'Por definir.', 'Por definir.'],
-    reflection: 'Pendiente de definir.',
+    coverImage: 'Shaform1.png',
+    coverAlt: 'Archivador SHAFORM cerrado con portada negra y logotipo rosado',
+    gallery: [
+      { image: 'Shaform2.png', alt: 'Archivador SHAFORM abierto con páginas interiores y transparencias', span: 'span 12' },
+      { image: 'Shaform3.png', alt: 'Páginas del archivo editorial SHAFORM dedicadas al fotolibro Thanatos', span: 'span 6' },
+      { image: 'Shaform4.png', alt: 'Páginas del archivo editorial SHAFORM dedicadas a República Marrana', span: 'span 6' }
+    ],
+    year: '2026',
+    contextLabel: 'Proyecto personal',
+    role: 'Dirección de arte y diseño editorial.',
+    shortDescription: 'Un archivo editorial que revela las ideas, procesos y materiales detrás de SHAFORM.',
+    description: ['Un archivo editorial que reúne lo que sucede detrás de SHAFORM: ideas, proyectos y procesos creativos que toman forma entre papeles, colores y texturas.'],
+    objectives: [
+      'Experimentar con papeles, texturas y transparencias.',
+      'Registrar las ideas y procesos detrás de cada proyecto.',
+      'Transformar lo invisible en una experiencia editorial tangible.'
+    ],
+    reflection: 'Cada proyecto comienza mucho antes de su resultado final. Entre pruebas, errores y descubrimientos, las ideas encuentran su propia forma.',
     cardSpan: 6
   }
 ];

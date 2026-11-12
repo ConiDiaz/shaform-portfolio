@@ -24,7 +24,16 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-ser
 .lnk{text-decoration:none!important;transition:color .25s ease}
 .lnk:hover{color:#F8BED6}
 header#top{max-width:none!important;margin:0!important;padding-left:max(calc((100vw - 1152px)/2),clamp(20px,5vw,64px))!important;padding-right:max(calc((100vw - 1152px)/2),clamp(20px,5vw,64px))!important}
-header#top{background:{{bg}}!important;border:0!important;box-shadow:none}
+header#top{background:var(--home-bg)!important;border:0!important;box-shadow:none}
+.m-sombra{--home-bg:#000000;--home-fg:#FFFFFF;--home-line:rgba(255,255,255,.22)}
+.m-luz{--home-bg:#FFFFFF;--home-fg:#000000;--home-line:rgba(0,0,0,.16)}
+.tog button{background:transparent;color:var(--home-fg)}
+.tog button[aria-pressed="true"]{background:var(--home-fg);color:var(--home-bg)}
+.home-span-4{grid-column:span 4}
+.home-span-8{grid-column:span 8}
+.home-span-12{grid-column:span 12}
+.home-card img{object-fit:cover;object-position:center}
+.home-card--un-instante-ya-fue img{object-position:51.2% center}
 .m-sombra header#top{box-shadow:0 6px 20px rgba(255,255,255,.1)}
 .m-luz header#top{box-shadow:0 6px 20px rgba(0,0,0,.12)}
 header#top .lnk{ text-decoration:none!important;transition:color .25s ease}
@@ -40,7 +49,7 @@ footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .home-about-name{white-space:nowrap}
-.home-ph-placeholder{display:flex;height:100%;box-sizing:border-box;align-items:center;justify-content:center;border:1px solid {{line}};font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.home-ph-placeholder{display:flex;height:100%;box-sizing:border-box;align-items:center;justify-content:center;border:1px solid var(--home-line);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .about-home-photo{overflow:hidden}
 .about-home-photo .rev{filter:grayscale(100%)!important;transition:filter .6s ease,transform .6s ease}
 .about-home-photo:hover .rev{filter:none!important;transform:scale(1.03)!important}
@@ -56,8 +65,8 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </style>
 <link rel="stylesheet" href="../header-nav.css">
 </helmet>
-<div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
-<header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
+<div class="root {{modoClass}}" style="background: var(--home-bg); color: var(--home-fg); transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
+<header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: var(--home-bg)">
 <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <div style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
@@ -65,11 +74,11 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <a class="lnk" data-label="Sobre mí" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Sobre mí</span></a>
 <a class="lnk" data-label="Hablemos" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Hablemos</span></a>
 </nav>
-<div class="tog" role="group" aria-label="Atmósfera" style="display: flex; gap: 4px; border: 1px solid {{line}}; border-radius: 999px; padding: 4px">
-<button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tSBg}}; color: {{tSFg}}">Sombra</button>
-<button class="btn" type="button" onClick="{{irLuz}}" aria-pressed="{{esLuz}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tLBg}}; color: {{tLFg}}">Luz</button>
+<div class="tog" role="group" aria-label="Atmósfera" style="display: flex; gap: 4px; border: 1px solid var(--home-line); border-radius: 999px; padding: 4px">
+<button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Sombra</button>
+<button class="btn" type="button" onClick="{{irLuz}}" aria-pressed="{{esLuz}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Luz</button>
 </div>
-<a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid {{fg}}; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
+<a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid var(--home-fg); font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
 </div>
 </header>
 <section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px)">
@@ -77,7 +86,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 14px">
 <div style="position: relative; width: 100%">
 <img src="{{logo}}" alt="SHAFORM" style="display: block; width: 100%; height: auto">
-<button type="button" onClick="{{alternar}}" aria-label="{{puntoLabel}}" style="position: absolute; left: 51.7%; top: 0; width: 16.8%; height: 100%; border-radius: 50%; border: 0; background: transparent; cursor: pointer; padding: 0"></button>
+<button class="home-logo-dot" type="button" onClick="{{alternar}}" aria-label="{{puntoLabel}}" style="position: absolute; left: 51.7%; top: 0; width: 16.8%; height: 100%; border-radius: 50%; border: 0; background: transparent; cursor: pointer; padding: 0"></button>
 </div>
 <span style="font-size: clamp(10px, 1.2vw, 15px); font-weight: 300; letter-spacing: .3em; text-transform: uppercase">By Constanza Díaz Olguín</span>
 </div>
@@ -89,22 +98,22 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px; max-width: 420px">
 <p style="margin: 0; font-size: 15px; line-height: 1.5">Soy Constanza, diseñadora gráfica. Me siento al lado de tu idea: pregunto, escucho y ordeno todo contigo hasta que toma forma.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center">
-<a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: var(--intro-last-line-width, 100%); min-width: max-content; max-width: 100%; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">Ver trabajos ↓</a>
+<a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: var(--intro-last-line-width, 100%); min-width: max-content; max-width: 100%; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid var(--home-fg)">Ver trabajos ↓</a>
 </div>
 </div>
 </div>
 </section>
 
 <section id="trabajos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
-<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid {{line}}; padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--home-line); padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
 <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Trabajos seleccionados</span><h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.2; font-weight: 600">Una muestra de lo que he diseñado</h2></div>
 <a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="font-size: 15px; min-height: 44px; display: inline-flex; align-items: center">Ver todos los proyectos →</a>
 </div>
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
 <sc-for list="{{trabajosSeleccionados}}" as="p" hint-placeholder-count="4">
-<a class="pj home-card {{p.wideClass}}" href="{{p.href}}" style="grid-column: span {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}">
-<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: {{p.fit}}; object-position: {{p.position}}"></sc-if>
+<a class="pj home-card home-span-{{p.span}} home-card--{{p.id}} {{p.wideClass}}" href="{{p.href}}" style="display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div class="ph" style="height: clamp(300px, 36vw, 540px); background: var(--home-line)">
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%"></sc-if>
 <sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span class="home-ph-placeholder">{{p.placeholder}}</span></sc-if>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.category}}</span></div>
@@ -114,7 +123,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </section>
 
 <section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
-<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid {{line}}; padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--home-line); padding-top: 20px; margin-bottom: clamp(32px, 4vw, 56px)">
 <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Sobre mí</span></div>
 
 </div>
@@ -125,13 +134,13 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 24px" class="span-s">
 <h2 class="home-about-name" style="margin: 0; font-size: clamp(32px, 3.25vw, 48px); line-height: 1.1; font-weight: 600">Constanza Díaz Olguín</h2>
 <p style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300">Antes de diseñar, pregunto. Me interesa la historia que hay detrás de cada idea y ordenarla con calma, hasta que se pueda ver.</p>
-<a class="btn btn-line" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}; align-self: flex-start">Conóceme →</a>
+<a class="btn btn-line" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid var(--home-fg); align-self: flex-start">Conóceme →</a>
 </div>
 </div>
 </section>
 
 <section id="hablemos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(56px, 7vw, 96px)">
-<div style="border-top: 1px solid {{line}}; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 40px 80px; justify-content: space-between; align-items: flex-end">
+<div style="border-top: 1px solid var(--home-line); padding-top: 20px; display: flex; flex-wrap: wrap; gap: 40px 80px; justify-content: space-between; align-items: flex-end">
 <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Hablemos</h2>
 <sc-if value="{{esSombra}}" hint-placeholder-val="{{true}}"><p style="margin: 0; font-size: clamp(32px, 4.6vw, 60px); line-height: 1.16; font-weight: 600">¿Tienes una idea que todavía no tiene forma?</p></sc-if>
@@ -171,18 +180,13 @@ class Component extends DCLogic {
     var st = this.state || {};
     var modo = window.SHAFORM_THEME || st.modo || this.props.modoInicial || 'sombra';
     var s = modo === 'sombra';
-    var K = '#000000', P = '#FFFFFF';
     var self = this;
     var projects = window.SHAFORM_PROJECTS || [];
     var v = {
       esSombra: s, esLuz: !s,
       modoClass: s ? 'm-sombra' : 'm-luz',
-      bg: s ? K : P, fg: s ? P : K,
-      line: s ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.16)',
       logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
       filtro: 'none',
-      tSBg: s ? P : 'transparent', tSFg: s ? K : K,
-      tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
       irSombra: function () { window.SHAFORM_SET_THEME('sombra'); self.setState({ modo: 'sombra' }); },
       irLuz: function () { window.SHAFORM_SET_THEME('luz'); self.setState({ modo: 'luz' }); },
@@ -192,12 +196,11 @@ class Component extends DCLogic {
     v.trabajosSeleccionados = selectedIds.map(function (id, index) {
       var project = projects.filter(function (p) { return p.id === id; })[0];
       return {
+        id: project.id,
         name: project.name,
         category: project.category,
         img: project.homeImage ? '../Proyectos-html/assets/' + project.homeImage : (project.coverImage ? '../Proyectos-html/assets/' + project.coverImage : (project.image ? './assets/' + project.image : '')),
         alt: project.coverAlt || project.imageAlt,
-        fit: 'cover',
-        position: project.cardImagePosition || 'center',
         placeholder: project.homeImage || project.coverImage || project.image ? '' : 'Imagen próximamente',
         href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(project.id),
         wideClass: project.id === 'vestigio' ? 'project-card--wide' : '',

@@ -39,6 +39,7 @@ footer{border-top:0!important}
 footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
+.project-card--shaform .ph{background:#e9dfe2!important}
 @media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -149,11 +150,11 @@ class Component extends DCLogic {
         img: p.listingImage ? './assets/' + p.listingImage : (p.coverImage ? './assets/' + p.coverImage : (p.image ? './assets/' + p.image : '')),
         alt: p.coverAlt || p.imageAlt,
         fit: 'cover',
-        position: p.cardImagePosition || 'center',
+        position: p.id === 'shaform' ? '51.7% center' : (p.cardImagePosition || 'center'),
         placeholder: p.listingImage || p.coverImage || p.image ? '' : (p.id === 'proyecto-por-definir' ? 'Portada provisional' : 'Portada pendiente'),
         phClass: p.listingImage || p.coverImage || p.image ? '' : 'ph-placeholder',
         href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(p.id),
-        wideClass: p.id === 'vestigio' ? 'project-card--wide' : '',
+        wideClass: p.id === 'vestigio' ? 'project-card--wide' : (p.id === 'shaform' ? 'project-card--shaform' : ''),
         span: 'span ' + p.cardSpan,
         h: p.cardSpan >= 8 ? 'clamp(320px, 42vw, 600px)' : 'clamp(280px, 32vw, 460px)'
       };

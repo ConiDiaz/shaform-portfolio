@@ -17,6 +17,15 @@ html.shaf-loading.shaf-transition-reveal::before {
   animation: shaf-slide-up .8s cubic-bezier(.76, 0, .24, 1) forwards;
 }
 
+html.shaf-loading.shaf-circle-loading::before {
+  background: #F8BED6;
+  clip-path: circle(150vmax at 50% 50%);
+}
+
+html.shaf-loading.shaf-circle-loading.shaf-transition-reveal::before {
+  animation: shaf-circle-in 1.1s cubic-bezier(.76, 0, .24, 1) forwards;
+}
+
 html.shaf-transition-exit::before {
   transform: translateY(100%);
   transition: transform .7s cubic-bezier(.76, 0, .24, 1);
@@ -26,18 +35,28 @@ html.shaf-transition-exit.shaf-transition-start::before {
   transform: translateY(0);
 }
 
-.shaf-loading-counter {
+.shaf-loading-brand {
   position: fixed;
   z-index: 10000;
-  right: clamp(20px, 5vw, 64px);
-  bottom: clamp(20px, 5vw, 64px);
-  color: #F8BED6;
-  font: 700 clamp(32px, 6vw, 72px)/1 Arial, sans-serif;
-  font-variant-numeric: tabular-nums;
+  top: 50%;
+  left: 50%;
+  width: clamp(160px, 22vw, 260px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  transition: opacity .2s ease;
   pointer-events: none;
+}
+
+html.shaf-transition-reveal .shaf-loading-brand {
+  opacity: 0;
 }
 
 @keyframes shaf-slide-up {
   from { transform: translateY(0); }
   to { transform: translateY(-100%); }
+}
+
+@keyframes shaf-circle-in {
+  from { clip-path: circle(var(--shaf-circle-start) at var(--shaf-circle-x) var(--shaf-circle-y)); }
+  to { clip-path: circle(var(--shaf-circle-end) at var(--shaf-circle-x) var(--shaf-circle-y)); }
 }

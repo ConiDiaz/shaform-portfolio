@@ -34,10 +34,15 @@ Luego abre:
 Todas las páginas están enlazadas entre sí para facilitar la navegación dentro del portafolio y la experiencia visual del sitio.
 Las transiciones entre páginas están definidas en `page-transition.js` y
 `page-transition.css`: una cubierta se desplaza hacia arriba con el color del
-modo activo. El contador aparece al entrar al sitio (excepto en Sobre mí) y al
-volver al inicio; es una animación visual, no una medición de los recursos
-descargados. Si el dispositivo solicita movimiento reducido, la navegación no
-reproduce estas animaciones.
+modo activo. En Inicio, una pantalla rosada se contrae hasta el círculo del
+logotipo; en las demás entradas se muestra una precarga breve con el logotipo,
+excepto en Sobre mí. La precarga espera la carga de la página hasta un máximo
+de 2,5 segundos. Si el dispositivo solicita movimiento reducido, la navegación
+no reproduce estas animaciones.
+
+En Proyectos, las portadas se amplían al pasar el cursor. En Inicio aparecen
+en blanco y negro y recuperan el color y se amplían al interactuar; en
+dispositivos táctiles se muestran en color.
 
 ## Público
 

@@ -5,33 +5,68 @@
   var homePath = /\/Inicio-html\/Main\.dc\.html$/i;
   var aboutPath = /\/Sobre%20m%C3%AD-html\/SobreMi\.dc\.html$/i;
   var pagePath = /\/(?:Inicio-html\/Main\.dc\.html|Proyectos-html\/Proyectos\.dc\.html|Sobre%20m%C3%AD-html\/SobreMi\.dc\.html|Hablemos-html\/Hablemos\.dc\.html|Proyecto\.dc\.html)$/i;
+  var assetBase = new URL('./assets/', document.currentScript.src);
   var navigating = false;
   var internalNavigation = false;
-  var counter;
+  var brand;
   var cleanupTimer;
-  var counterTimer;
-  var revealTimer;
+  var minimumTimer;
+  var maximumTimer;
+  var onPageLoad;
+
+  function positionCircle() {
+    var dot = document.querySelector('.home-logo-dot');
+    var logo = dot && dot.parentElement.querySelector('img');
+    if (!logo || !logo.naturalWidth) return false;
+    var rect = logo.getBoundingClientRect();
+    if (!rect.width || rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
+    // Pink circle in the 2361 × 394 home logo: center x=1420, radius=197.
+    var x = rect.left + rect.width * (1420 / 2361);
+    var y = rect.top + rect.height / 2;
+    var radius = rect.width * (197 / 2361);
+    var farthestX = Math.max(Math.abs(x), Math.abs(window.innerWidth - x));
+    var farthestY = Math.max(Math.abs(y), Math.abs(window.innerHeight - y));
+    root.style.setProperty('--shaf-circle-x', x + 'px');
+    root.style.setProperty('--shaf-circle-y', y + 'px');
+    root.style.setProperty('--shaf-circle-start', Math.hypot(farthestX, farthestY) + 2 + 'px');
+    root.style.setProperty('--shaf-circle-end', radius + 'px');
+    return true;
+  }
 
   function clearLoading() {
     window.clearTimeout(cleanupTimer);
-    window.clearTimeout(revealTimer);
-    window.clearInterval(counterTimer);
+    window.clearTimeout(minimumTimer);
+    window.clearTimeout(maximumTimer);
+    if (onPageLoad) window.removeEventListener('load', onPageLoad);
     root.removeEventListener('animationend', onRevealEnd);
-    root.classList.remove('shaf-loading', 'shaf-transition-reveal');
-    if (counter) {
-      counter.remove();
-      counter = null;
+    window.removeEventListener('resize', positionCircle);
+    window.removeEventListener('scroll', positionCircle);
+    root.classList.remove('shaf-loading', 'shaf-transition-reveal', 'shaf-circle-loading');
+    root.style.removeProperty('--shaf-circle-x');
+    root.style.removeProperty('--shaf-circle-y');
+    root.style.removeProperty('--shaf-circle-start');
+    root.style.removeProperty('--shaf-circle-end');
+    if (brand) {
+      brand.remove();
+      brand = null;
     }
   }
 
   function onRevealEnd(event) {
-    if (event.target === root && event.animationName === 'shaf-slide-up' && event.pseudoElement === '::before') clearLoading();
+    if (event.target === root && (event.animationName === 'shaf-slide-up' || event.animationName === 'shaf-circle-in') && event.pseudoElement === '::before') clearLoading();
   }
 
   function revealPage() {
-    if (counter) {
-      counter.remove();
-      counter = null;
+    window.clearTimeout(minimumTimer);
+    window.clearTimeout(maximumTimer);
+    if (onPageLoad) window.removeEventListener('load', onPageLoad);
+    if (root.classList.contains('shaf-circle-loading')) {
+      if (positionCircle()) {
+        window.addEventListener('resize', positionCircle);
+        window.addEventListener('scroll', positionCircle);
+      } else {
+        root.classList.remove('shaf-circle-loading');
+      }
     }
     root.addEventListener('animationend', onRevealEnd);
     root.classList.add('shaf-transition-reveal');
@@ -51,6 +86,7 @@
 
   if (!reducedMotion.matches) {
     root.classList.add('shaf-loading');
+    if (homePath.test(location.pathname)) root.classList.add('shaf-circle-loading');
 
     window.addEventListener('DOMContentLoaded', function () {
       if (aboutPath.test(location.pathname) || (internalNavigation && !homePath.test(location.pathname))) {
@@ -58,38 +94,30 @@
         return;
       }
 
-      var started = performance.now();
       var loaded = document.readyState === 'complete';
-      var revealing = false;
-
-      counter = document.createElement('div');
-      counter.className = 'shaf-loading-counter';
-      counter.setAttribute('aria-hidden', 'true');
-      counter.textContent = '0';
-      document.body.appendChild(counter);
-
-      window.addEventListener('load', function () {
-        loaded = true;
-      }, { once: true });
-
-      function updateCounter() {
-        if (revealing || !counter) return;
-        var elapsed = performance.now() - started;
-        var complete = elapsed >= 2000 && (loaded || elapsed >= 5000);
-        var progress = complete ? 100 : Math.min(95, Math.floor(elapsed / 2000 * 100));
-        counter.textContent = String(progress);
-
-        if (complete) {
-          revealing = true;
-          window.clearInterval(counterTimer);
-          revealTimer = window.setTimeout(function () {
-            if (!counter) return;
-            revealPage();
-          }, 120);
-        }
+      var minimumElapsed = false;
+      if (!homePath.test(location.pathname)) {
+        brand = document.createElement('img');
+        brand.className = 'shaf-loading-brand';
+        brand.alt = '';
+        brand.setAttribute('aria-hidden', 'true');
+        brand.src = new URL(
+          root.getAttribute('data-shaf-mode') === 'luz' ? 'ed8523632032579f51b8ff645527fb0c.png' : '39ee6c72a1b9c78d7996165fdac0f45e.png',
+          assetBase
+        ).href;
+        document.body.appendChild(brand);
       }
 
-      counterTimer = window.setInterval(updateCounter, 32);
+      onPageLoad = function () {
+        loaded = true;
+        if (minimumElapsed) revealPage();
+      };
+      if (!loaded) window.addEventListener('load', onPageLoad, { once: true });
+      minimumTimer = window.setTimeout(function () {
+        minimumElapsed = true;
+        if (loaded) revealPage();
+      }, 600);
+      maximumTimer = window.setTimeout(revealPage, 2500);
     }, { once: true });
   }
 
