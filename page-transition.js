@@ -18,12 +18,11 @@
     var dot = document.querySelector('.home-logo-dot');
     var logo = dot && dot.parentElement.querySelector('img');
     if (!logo || !logo.naturalWidth) return false;
-    var rect = logo.getBoundingClientRect();
-    if (!rect.width || rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
-    // Pink circle in the 2361 × 394 home logo: center x=1420, radius=197.
-    var x = rect.left + rect.width * (1420 / 2361);
+    var rect = dot.getBoundingClientRect();
+    if (!rect.width || !rect.height || rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
+    var x = rect.left + rect.width / 2;
     var y = rect.top + rect.height / 2;
-    var radius = rect.width * (197 / 2361);
+    var radius = rect.height / 2;
     var farthestX = Math.max(Math.abs(x), Math.abs(window.innerWidth - x));
     var farthestY = Math.max(Math.abs(y), Math.abs(window.innerHeight - y));
     root.style.setProperty('--shaf-circle-x', x + 'px');

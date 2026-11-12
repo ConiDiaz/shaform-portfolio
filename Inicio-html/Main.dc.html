@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SHAFORM — Inicio</title>
 <script src="../theme.js"></script>
 <link rel="stylesheet" href="../page-transition.css">
@@ -58,7 +59,8 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 @media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
 @media(hover:none),(pointer:coarse){.home-card img{filter:none!important}}
 @media(hover:none),(pointer:coarse){.about-home-photo .rev{filter:none!important;transform:none!important}}
-@media(max-width:760px){.home-about-name{white-space:normal}}
+@media(max-width:1024px){.home-about-name{white-space:normal}}
+@media(max-width:760px){.g{grid-template-columns:minmax(0,1fr)!important}.g > *,.g > .project-card--wide{grid-column:1 / -1!important}}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media(prefers-reduced-motion:reduce){.home-card img{transition:none!important}}
@@ -85,10 +87,9 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <p style="margin: 0; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{etiquetaModo}}</p>
 <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 14px">
 <div style="position: relative; width: 100%">
-<img src="{{logo}}" alt="SHAFORM" style="display: block; width: 100%; height: auto">
-<button class="home-logo-dot" type="button" onClick="{{alternar}}" aria-label="{{puntoLabel}}" style="position: absolute; left: 51.7%; top: 0; width: 16.8%; height: 100%; border-radius: 50%; border: 0; background: transparent; cursor: pointer; padding: 0"></button>
+<img src="{{logoInicio}}" alt="SHAFORM, by Constanza Díaz Olguín" style="display: block; width: 100%; height: auto">
+<button class="home-logo-dot" type="button" onClick="{{alternar}}" aria-label="{{puntoLabel}}" style="position: absolute; left: 51.8%; top: 0; width: 16.74%; height: 82.12%; border-radius: 50%; border: 0; background: transparent; cursor: pointer; padding: 0"></button>
 </div>
-<span style="font-size: clamp(10px, 1.2vw, 15px); font-weight: 300; letter-spacing: .3em; text-transform: uppercase">By Constanza Díaz Olguín</span>
 </div>
 <div class="home-intro" style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr); gap: clamp(20px, 4vw, 56px); align-items: stretch">
 <div style="max-width: 760px">
@@ -186,6 +187,7 @@ class Component extends DCLogic {
       esSombra: s, esLuz: !s,
       modoClass: s ? 'm-sombra' : 'm-luz',
       logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
+      logoInicio: s ? './assets/shaform-titulo-sombra.webp' : './assets/shaform-titulo-luz.webp',
       filtro: 'none',
       menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
       irSombra: function () { window.SHAFORM_SET_THEME('sombra'); self.setState({ modo: 'sombra' }); },

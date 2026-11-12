@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SHAFORM — Proyectos</title>
 <script src="../theme.js"></script>
 <link rel="stylesheet" href="../page-transition.css">
@@ -41,6 +42,7 @@ footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-wid
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-card--shaform .ph{background:#e9dfe2!important}
 @media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
+@media(max-width:760px){.g{grid-template-columns:minmax(0,1fr)!important}.g > *,.g > .project-card--wide{grid-column:1 / -1!important}}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
