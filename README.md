@@ -32,6 +32,8 @@ Luego abre:
 ## Navegación
 
 Todas las páginas están enlazadas entre sí para facilitar la navegación dentro del portafolio y la experiencia visual del sitio.
+En pantallas pequeñas, el botón de menú despliega los enlaces y los controles
+de luz y sombra.
 Las transiciones entre páginas están definidas en `page-transition.js` y
 `page-transition.css`: una cubierta se desplaza hacia arriba con el color del
 modo activo. En Inicio, una pantalla rosada se contrae hasta el círculo del

@@ -57,6 +57,76 @@ header#top .navlinks .lnk:focus-visible::before {
   color: #000000 !important;
 }
 
+@media (max-width: 760px) {
+  header#top {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  header#top > .menubtn {
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  header#top > .menubtn span {
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  header#top > .header-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px clamp(20px, 5vw, 64px) 24px;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    background: inherit;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, .12);
+  }
+
+  header#top > .menubtn[aria-expanded="true"] + .header-menu,
+  header#top .header-menu .navlinks,
+  header#top .header-menu .tog {
+    display: flex !important;
+  }
+
+  header#top .header-menu .navlinks {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0 !important;
+  }
+
+  footer > div {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px !important;
+  }
+
+  footer > div > div:first-child,
+  footer > div > div:last-child {
+    min-width: 0 !important;
+  }
+
+  footer > div > div:nth-child(2) {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   header#top .navlinks .lnk,
   header#top .navlinks .lnk::before {

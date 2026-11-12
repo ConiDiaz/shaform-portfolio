@@ -40,7 +40,6 @@ footer{border-top:0!important}
 footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
-@media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 <link rel="stylesheet" href="../header-nav.css">
@@ -48,7 +47,8 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
 <a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
-<div style="display: flex; align-items: center; gap: 16px 40px">
+<button class="menubtn" type="button" aria-label="Menú" aria-controls="header-menu" aria-expanded="{{menuAbierto}}" onClick="{{alternarMenu}}"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+<div id="header-menu" class="header-menu" style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
 <a class="lnk" data-label="Proyectos" href="../Proyectos-html/Proyectos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Proyectos</span></a>
 <a class="lnk" data-label="Sobre mí" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Sobre mí</span></a>
@@ -58,7 +58,6 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tSBg}}; color: {{tSFg}}">Sombra</button>
 <button class="btn" type="button" onClick="{{irLuz}}" aria-pressed="{{esLuz}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tLBg}}; color: {{tLFg}}">Luz</button>
 </div>
-<a class="menubtn btn btn-line" href="{{menuHref}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; min-height: 44px; padding: 0 20px; border: 1px solid {{fg}}; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">Menú</a>
 </div>
 </header>
 <main style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(48px, 8vw, 112px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: clamp(56px, 8vw, 104px)">
@@ -120,7 +119,8 @@ class Component extends DCLogic {
       filtro: s ? 'grayscale(1)' : 'none',
       tSBg: s ? P : 'transparent', tSFg: s ? K : K,
       tLBg: s ? 'transparent' : K, tLFg: s ? P : P,
-      menuHref: s ? 'MenuMovil.dc.html' : 'MenuMovilLuz.dc.html',
+      menuAbierto: Boolean(st.menuAbierto),
+      alternarMenu: function () { self.setState({ menuAbierto: !st.menuAbierto }); },
       irSombra: function () { window.SHAFORM_SET_THEME('sombra'); self.setState({ modo: 'sombra' }); },
       irLuz: function () { window.SHAFORM_SET_THEME('luz'); self.setState({ modo: 'luz' }); },
       alternar: function () { var nuevoModo = s ? 'luz' : 'sombra'; window.SHAFORM_SET_THEME(nuevoModo); self.setState({ modo: nuevoModo }); }
