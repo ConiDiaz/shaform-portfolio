@@ -22,13 +22,13 @@
     if (!rect.width || !rect.height || rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
     var x = rect.left + rect.width / 2;
     var y = rect.top + rect.height / 2;
-    var radius = rect.height / 2;
     var farthestX = Math.max(Math.abs(x), Math.abs(window.innerWidth - x));
     var farthestY = Math.max(Math.abs(y), Math.abs(window.innerHeight - y));
     root.style.setProperty('--shaf-circle-x', x + 'px');
     root.style.setProperty('--shaf-circle-y', y + 'px');
     root.style.setProperty('--shaf-circle-start', Math.hypot(farthestX, farthestY) + 2 + 'px');
-    root.style.setProperty('--shaf-circle-end', radius + 'px');
+    root.style.setProperty('--shaf-circle-end-x', rect.width / 2 + 'px');
+    root.style.setProperty('--shaf-circle-end-y', rect.height / 2 + 'px');
     return true;
   }
 
@@ -44,7 +44,8 @@
     root.style.removeProperty('--shaf-circle-x');
     root.style.removeProperty('--shaf-circle-y');
     root.style.removeProperty('--shaf-circle-start');
-    root.style.removeProperty('--shaf-circle-end');
+    root.style.removeProperty('--shaf-circle-end-x');
+    root.style.removeProperty('--shaf-circle-end-y');
     if (brand) {
       brand.remove();
       brand = null;

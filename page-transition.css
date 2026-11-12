@@ -57,6 +57,6 @@ html.shaf-transition-reveal .shaf-loading-brand {
 }
 
 @keyframes shaf-circle-in {
-  from { clip-path: circle(var(--shaf-circle-start) at var(--shaf-circle-x) var(--shaf-circle-y)); }
-  to { clip-path: circle(var(--shaf-circle-end) at var(--shaf-circle-x) var(--shaf-circle-y)); }
+  from { clip-path: ellipse(var(--shaf-circle-start) var(--shaf-circle-start) at var(--shaf-circle-x) var(--shaf-circle-y)); }
+  to { clip-path: ellipse(var(--shaf-circle-end-x) var(--shaf-circle-end-y) at var(--shaf-circle-x) var(--shaf-circle-y)); }
 }
