@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>SHAFORM — Proyectos</title>
 <script src="../theme.js"></script>
+<link rel="stylesheet" href="../page-transition.css">
+<script src="../page-transition.js"></script>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="../project-data.js"></script>
@@ -13,7 +15,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.pj img,.rev{filter:none!important;transition:transform .6s ease}.pj:hover img{transform:scale(1.03)}.pj .ph-placeholder{display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:24px;border:1px solid {{line}};text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
@@ -37,18 +39,20 @@ footer{border-top:0!important}
 footer>div>div:first-child,footer>div>div:last-child{gap:0!important;line-height:36px}
 footer>a{box-sizing:border-box;width:calc(100% - clamp(40px,10vw,128px));max-width:1152px;height:clamp(56px,12vw,168px)!important;margin:0 auto;overflow:hidden;transform:translateY(12px)!important}
 footer>a img{display:block;width:100%;height:auto;transform:none!important}
+@media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
 @media(max-width:760px){header#top{flex-wrap:wrap!important;gap:8px 16px!important;padding-top:12px!important;padding-bottom:12px!important}header#top>div{width:100%;flex-wrap:wrap;gap:8px 12px;justify-content:space-between}header#top .navlinks,header#top .tog{display:flex!important}header#top .navlinks{flex:1 1 160px;flex-wrap:wrap;gap:4px 16px!important}header#top .menubtn{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
+<link rel="stylesheet" href="../header-nav.css">
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
 <a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <div style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
-<a class="lnk" href="../Proyectos-html/Proyectos.dc.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px">Proyectos</a>
-<a class="lnk" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Sobre mí</a>
-<a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Hablemos</a>
+<a class="lnk" data-label="Proyectos" href="../Proyectos-html/Proyectos.dc.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px"><span>Proyectos</span></a>
+<a class="lnk" data-label="Sobre mí" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Sobre mí</span></a>
+<a class="lnk" data-label="Hablemos" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Hablemos</span></a>
 </nav>
 <div class="tog" role="group" aria-label="Atmósfera" style="display: flex; gap: 4px; border: 1px solid {{line}}; border-radius: 999px; padding: 4px">
 <button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tSBg}}; color: {{tSFg}}">Sombra</button>
@@ -75,11 +79,12 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 
 <section aria-label="Grilla de proyectos" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
+<sc-if value="{{sinResultados}}" hint-placeholder-val="{{false}}"><p role="status" style="margin: 0; font-size: 15px">No hay proyectos en esta categoría por ahora.</p></sc-if>
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
 <sc-for list="{{lista}}" as="p" hint-placeholder-count="8">
-<a class="pj" href="{{p.href}}" style="grid-column: {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj {{p.wideClass}}" href="{{p.href}}" style="grid-column: {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph {{p.phClass}}" style="height: {{p.h}}; background: {{line}}">
-<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: {{p.fit}}; object-position: {{p.position}}"></sc-if>
 <sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span>{{p.placeholder}}</span></sc-if>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.cat}}</span></div>
@@ -141,16 +146,19 @@ class Component extends DCLogic {
         name: p.name,
         cat: p.category,
         k: p.filters,
-        img: p.image ? './assets/' + p.image : '',
-        alt: p.imageAlt,
-        placeholder: p.image ? '' : (p.id === 'proyecto-por-definir' ? 'Portada provisional' : 'Portada pendiente'),
-        phClass: p.image ? '' : 'ph-placeholder',
+        img: p.listingImage ? './assets/' + p.listingImage : (p.coverImage ? './assets/' + p.coverImage : (p.image ? './assets/' + p.image : '')),
+        alt: p.coverAlt || p.imageAlt,
+        fit: 'cover',
+        position: p.cardImagePosition || 'center',
+        placeholder: p.listingImage || p.coverImage || p.image ? '' : (p.id === 'proyecto-por-definir' ? 'Portada provisional' : 'Portada pendiente'),
+        phClass: p.listingImage || p.coverImage || p.image ? '' : 'ph-placeholder',
         href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(p.id),
+        wideClass: p.id === 'vestigio' ? 'project-card--wide' : '',
         span: 'span ' + p.cardSpan,
         h: p.cardSpan >= 8 ? 'clamp(320px, 42vw, 600px)' : 'clamp(280px, 32vw, 460px)'
       };
     });
-    var F = [['todos','Todos'],['fotografia','Fotografía'],['identidad','Identidad'],['interactivo','Interactivo'],['editorial','Editorial'],['packaging','Packaging']];
+    var F = [['todos','Todos'],['fotografia','Fotografía'],['identidad','Identidad'],['interactivo','Interactivo'],['editorial','Editorial']];
     var f = st.filtro || 'todos';
     var L = P.filter(function (p) { return f === 'todos' || p.k.indexOf(f) >= 0; });
     var rows = [], row = [], rowSpan = 0;
@@ -173,6 +181,7 @@ class Component extends DCLogic {
       currentRow.indices.forEach(function (index) { L[index].h = height; });
     });
     v.lista = L;
+    v.sinResultados = L.length === 0;
     v.chips = F.map(function (c) {
       var on = c[0] === f;
       return { label: c[1], on: on, border: on ? v.fg : v.line, dot: on ? '#F8BED6' : 'transparent', pick: function () { self.setState({ filtro: c[0] }); } };

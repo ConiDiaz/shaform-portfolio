@@ -32,6 +32,12 @@ Luego abre:
 ## Navegación
 
 Todas las páginas están enlazadas entre sí para facilitar la navegación dentro del portafolio y la experiencia visual del sitio.
+Las transiciones entre páginas están definidas en `page-transition.js` y
+`page-transition.css`: una cubierta se desplaza hacia arriba con el color del
+modo activo. El contador aparece al entrar al sitio (excepto en Sobre mí) y al
+volver al inicio; es una animación visual, no una medición de los recursos
+descargados. Si el dispositivo solicita movimiento reducido, la navegación no
+reproduce estas animaciones.
 
 ## Público
 

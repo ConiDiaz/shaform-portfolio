@@ -1,0 +1,43 @@
+html.shaf-loading::before,
+html.shaf-transition-exit::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  pointer-events: auto;
+}
+
+html[data-shaf-mode="luz"].shaf-loading::before,
+html[data-shaf-mode="luz"].shaf-transition-exit::before {
+  background: #fff;
+}
+
+html.shaf-loading.shaf-transition-reveal::before {
+  animation: shaf-slide-up .8s cubic-bezier(.76, 0, .24, 1) forwards;
+}
+
+html.shaf-transition-exit::before {
+  transform: translateY(100%);
+  transition: transform .7s cubic-bezier(.76, 0, .24, 1);
+}
+
+html.shaf-transition-exit.shaf-transition-start::before {
+  transform: translateY(0);
+}
+
+.shaf-loading-counter {
+  position: fixed;
+  z-index: 10000;
+  right: clamp(20px, 5vw, 64px);
+  bottom: clamp(20px, 5vw, 64px);
+  color: #F8BED6;
+  font: 700 clamp(32px, 6vw, 72px)/1 Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+@keyframes shaf-slide-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}

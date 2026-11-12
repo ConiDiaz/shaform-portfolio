@@ -7,6 +7,13 @@ window.SHAFORM_PROJECTS = [
     filters: ['fotografia', 'editorial'],
     image: '495d68695761413f5b19c6c9b7718e0e.jpg',
     imageAlt: 'Fotolibro Thanatos',
+    coverImage: 'Thanatos 1.webp',
+    coverAlt: 'Portada del fotolibro Thanatos junto a una tarjeta y flores secas',
+    gallery: [
+      { image: 'Thanatos 2.webp', alt: 'Fotolibro Thanatos semiabierto junto a una tarjeta', span: 'span 12' },
+      { image: 'Thanatos 3.webp', alt: 'Fotolibro Thanatos abierto y sostenido con las manos', span: 'span 6' },
+      { image: 'Thanatos 4.webp', alt: 'Persona observando el interior del fotolibro Thanatos', span: 'span 6' }
+    ],
     year: '2024',
     contextLabel: 'Proyecto individual',
     role: 'Fotografía y diseño editorial',
@@ -27,66 +34,22 @@ window.SHAFORM_PROJECTS = [
     cardSpan: 8
   },
   {
-    id: 'lafken',
-    name: 'Lafken',
-    category: 'Identidad y packaging',
-    homeCategory: 'Identidad visual y packaging',
-    filters: ['identidad', 'packaging'],
-    image: '30dcb9ff8072b4ef7e28834a4d04ff91.jpg',
-    imageAlt: 'Botellas de cerveza Lafken',
-    year: '2024',
-    contextLabel: 'Cerveza inspirada en Chiloé',
-    role: 'Concepto y diseño gráfico',
-    shortDescription: 'Una identidad que transforma las leyendas de Chiloé en una experiencia visual.',
-    description: [
-      'Lafken nace de las leyendas de Chiloé y de la intención de llevar su imaginario a una experiencia visual y tangible.',
-      'A través de sus etiquetas, botellas y cajas, la marca transforma relatos de la isla en un sistema gráfico que conecta tradición, misterio e identidad territorial.',
-      'Más que una cerveza, Lafken busca llevar un fragmento de la cultura chilota a cada mesa.'
-    ],
-    context: 'Chiloé es un territorio donde las leyendas conviven con el paisaje y la identidad cultural. Lafken toma ese universo como punto de partida para construir una marca que transforma relatos en imágenes.',
-    challenge: '¿Cómo trasladar la riqueza del imaginario chilote a una identidad visual contemporánea sin perder su carácter?',
-    objectives: [
-      'Interpretar visualmente las\nleyendas de Chiloé.',
-      'Crear una identidad gráfica\ncoherente para la marca.',
-      'Aplicar la identidad en\netiquetas y packaging.'
-    ],
-    reflection: 'Una historia puede viajar mucho más allá del lugar donde nació. A veces basta una imagen, un color o una botella para acercarnos a un territorio lleno de memoria.',
-    cardSpan: 4
-  },
-  {
-    id: 'vestigio',
-    name: 'Vestigio',
-    category: 'Identidad visual',
-    homeCategory: 'Identidad visual',
-    filters: ['identidad'],
-    image: '30c82996a72b31768aa59cb6f146c9d5.jpg',
-    imageAlt: 'Papelería del Centro de Documentación del MNBA: carpetas, sobres y credenciales',
-    year: '2026',
-    contextLabel: 'CEDOC MNBA',
-    role: 'Diseño de identidad visual',
-    shortDescription: 'Una identidad visual para hacer visible la memoria del archivo del MNBA.',
-    description: [
-      'Vestigio es un sistema de identidad visual desarrollado para el Centro de Documentación del Museo Nacional de Bellas Artes.',
-      'La propuesta busca dar forma a un lenguaje gráfico claro, coherente y con personalidad propia, integrando los lineamientos visuales del museo y del Ministerio de las Culturas, las Artes y el Patrimonio.',
-      'El proyecto entiende el archivo como un espacio donde la memoria permanece, se organiza y encuentra nuevas maneras de hacerse visible.'
-    ],
-    context: 'Los archivos conservan documentos, pero también historias y fragmentos de memoria. Vestigio nace de la necesidad de otorgar una identidad visual al Centro de Documentación del MNBA.',
-    challenge: '¿Cómo construir una identidad propia que dialogue con la institución y, al mismo tiempo, haga visible el valor del archivo?',
-    objectives: [
-      'Desarrollar una identidad\nvisual coherente.',
-      'Integrar los lineamientos\ninstitucionales.',
-      'Crear un sistema adaptable\na distintos soportes.'
-    ],
-    reflection: 'Diseñar para la memoria es encontrar nuevas formas de hacer visible lo que ya existe, sin perder las huellas de aquello que le dio origen.',
-    cardSpan: 4
-  },
-  {
     id: 'un-instante-ya-fue',
     name: 'Un instante ya fue',
-    category: 'Diseño interactivo',
+    category: 'Interactivo',
     filters: ['interactivo'],
     image: '',
     imageAlt: '',
+    coverImage: 'un instante ya fue 1.webp',
+    listingImage: 'un instante ya fue portada.png',
+    homeImage: 'un instante ya fue portada.png',
+    cardImagePosition: '51.2% center',
+    coverAlt: 'Computador mostrando el código y la interfaz de Un instante ya fue',
+    gallery: [
+      { image: 'un instante ya fue 2.webp', alt: 'Manos utilizando el computador con el proyecto interactivo en pantalla', span: 'span 12' },
+      { image: 'un instante ya fue 3.webp', alt: 'Interfaz amarilla de Un instante ya fue en un teléfono sostenido con las manos', span: 'span 6' },
+      { image: 'un instante ya fue 4.webp', alt: 'Interfaz rosada y verde de Un instante ya fue en un teléfono', span: 'span 6' }
+    ],
     year: '2025',
     contextLabel: 'Proyecto interactivo en p5.js',
     role: 'Diseño y programación creativa',
@@ -102,19 +65,63 @@ window.SHAFORM_PROJECTS = [
       'Crear una experiencia\ninteractiva coherente.'
     ],
     reflection: 'Cada interacción deja una huella distinta. Lo que aparece en pantalla puede desaparecer en un instante, pero la experiencia de crearlo permanece.',
-    cardSpan: 8
+    cardSpan: 4
+  },
+  {
+    id: 'vestigio',
+    name: 'Vestigio',
+    category: 'Identidad',
+    homeCategory: 'Identidad',
+    filters: ['identidad'],
+    image: '30c82996a72b31768aa59cb6f146c9d5.jpg',
+    imageAlt: 'Papelería del Centro de Documentación del MNBA: carpetas, sobres y credenciales',
+    coverImage: 'Vestigio 1.webp',
+    coverAlt: 'Computador y piezas de identidad visual y editoriales del CEDOC',
+    gallery: [
+      { image: 'Vestigio 2.webp', alt: 'Página interior del proyecto editorial Vestigio con texto destacado en rojo', span: 'span 12' },
+      { image: 'Vestigio 3.webp', alt: 'Tres tarjetas de presentación del CEDOC', span: 'span 6' },
+      { image: 'Vestigio 4.webp', alt: 'Catálogo y propuestas de identidad visual del CEDOC', span: 'span 6' }
+    ],
+    year: '2026',
+    contextLabel: 'CEDOC MNBA',
+    role: 'Diseño de identidad visual',
+    collaborators: ['Alinette Galdames'],
+    shortDescription: 'Una identidad visual para hacer visible la memoria del archivo del MNBA.',
+    description: [
+      'Vestigio es un sistema de identidad visual desarrollado para el Centro de Documentación del Museo Nacional de Bellas Artes.',
+      'La propuesta busca dar forma a un lenguaje gráfico claro, coherente y con personalidad propia, integrando los lineamientos visuales del museo y del Ministerio de las Culturas, las Artes y el Patrimonio.',
+      'El proyecto entiende el archivo como un espacio donde la memoria permanece, se organiza y encuentra nuevas maneras de hacerse visible.'
+    ],
+    context: 'Los archivos conservan documentos, pero también historias y fragmentos de memoria. Vestigio nace de la necesidad de otorgar una identidad visual al Centro de Documentación del MNBA.',
+    challenge: '¿Cómo construir una identidad propia que dialogue con la institución y, al mismo tiempo, haga visible el valor del archivo?',
+    objectives: [
+      'Desarrollar una identidad\nvisual coherente.',
+      'Integrar los lineamientos\ninstitucionales.',
+      'Crear un sistema adaptable\na distintos soportes.'
+    ],
+    reflection: 'Diseñar para la memoria es encontrar nuevas formas de hacer visible lo que ya existe, sin perder las huellas de aquello que le dio origen.',
+    cardSpan: 12
   },
   {
     id: 'republica-marrana',
     name: 'República Marrana',
-    category: 'Diseño editorial',
-    homeCategory: 'Diseño gráfico y editorial',
+    category: 'Identidad y editorial',
+    homeCategory: 'Identidad y editorial',
     filters: ['editorial'],
     image: '',
     imageAlt: '',
+    coverImage: 'Republica marrana 1.webp',
+    listingImage: 'Republica marrana portada.png',
+    coverAlt: 'Portada ilustrada y disco de República Marrana',
+    gallery: [
+      { image: 'Republica marrana 2.webp', alt: 'Álbum República Marrana desplegado junto al disco y sus piezas gráficas', span: 'span 12' },
+      { image: 'Republica marrana 3.webp', alt: 'Contraportada del álbum República Marrana junto a piezas gráficas', span: 'span 6' },
+      { image: 'Republica marrana 4.webp', alt: 'Interior del álbum República Marrana abierto', span: 'span 6' }
+    ],
     year: '2026',
     contextLabel: 'Proyecto musical conceptual',
     role: 'Composición y diseño editorial',
+    collaborators: ['Alinette Galdames'],
     shortDescription: 'Un álbum conceptual que cruza música, crítica social y gráfica irreverente.',
     description: [
       'República Marrana es una propuesta de álbum conceptual para Chancho en Piedra, imaginada como parte de un recopilatorio de su trayectoria musical.',
@@ -134,7 +141,7 @@ window.SHAFORM_PROJECTS = [
   {
     id: 'proyecto-por-definir',
     name: 'Proyecto por definir',
-    category: 'Diseño editorial',
+    category: 'Editorial',
     filters: ['editorial'],
     image: '',
     imageAlt: '',

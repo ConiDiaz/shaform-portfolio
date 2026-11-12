@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>SHAFORM — Inicio</title>
 <script src="../theme.js"></script>
+<link rel="stylesheet" href="../page-transition.css">
+<script src="../page-transition.js"></script>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="../project-data.js"></script>
@@ -13,7 +15,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font-family:inherit}.root{animation:entra .5s ease both}@keyframes entra{from{opacity:0}to{opacity:1}}a:focus-visible,button:focus-visible{outline:2px solid #F8BED6;outline-offset:4px}.lnk{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .25s ease}.lnk:hover{text-decoration-color:#F8BED6}.btn{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}.m-sombra .btn-line:hover{background:#FFFFFF !important;color:#000000 !important}.m-luz .btn-line:hover{background:#000000 !important;color:#FFFFFF !important}.btn-solid:hover{box-shadow:0 0 0 3px #F8BED6}.chip{transition:border-color .25s ease}.m-sombra .chip:hover{border-color:#FFFFFF !important}.m-luz .chip:hover{border-color:#000000 !important}.pj .ph{overflow:hidden}.home-card img{filter:grayscale(100%);transition:filter .6s ease,transform .6s ease}.home-card:hover img,.home-card:focus-visible img{filter:none;transform:scale(1.03)}.pj .dot{opacity:0;transition:opacity .25s ease}.pj:hover .dot{opacity:1}.menubtn{display:none !important}section[id],main[id],[id]{scroll-margin-top:120px}@media (max-width:1024px){.g > *{grid-column:span 6 !important}.g .ph{height:clamp(260px,40vw,420px) !important}}@media (max-width:760px){.navlinks,.tog{display:none !important}.menubtn{display:inline-flex !important}.g > *{grid-column:span 12 !important}.g .ph{height:auto !important;aspect-ratio:4 / 3}.hide-s{display:none !important}.span-s{grid-column:span 12 !important}}
 </style>
@@ -44,6 +46,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .about-home-photo:hover .rev{filter:none!important;transform:scale(1.03)!important}
 .home-intro{align-items:end!important}
 @media(max-width:760px){.home-intro{grid-template-columns:1fr!important;gap:24px!important;align-items:start!important}.home-intro>div:last-child{max-width:none!important}}
+@media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
 @media(hover:none),(pointer:coarse){.home-card img{filter:none!important}}
 @media(hover:none),(pointer:coarse){.about-home-photo .rev{filter:none!important;transform:none!important}}
 @media(max-width:760px){.home-about-name{white-space:normal}}
@@ -51,15 +54,16 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media(prefers-reduced-motion:reduce){.home-card img{transition:none!important}}
 </style>
+<link rel="stylesheet" href="../header-nav.css">
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
 <a href="Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <div style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
-<a class="lnk" href="../Proyectos-html/Proyectos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Proyectos</a>
-<a class="lnk" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Sobre mí</a>
-<a class="lnk" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px">Hablemos</a>
+<a class="lnk" data-label="Proyectos" href="../Proyectos-html/Proyectos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Proyectos</span></a>
+<a class="lnk" data-label="Sobre mí" href="../Sobre mí-html/SobreMi.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Sobre mí</span></a>
+<a class="lnk" data-label="Hablemos" href="../Hablemos-html/Hablemos.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><span>Hablemos</span></a>
 </nav>
 <div class="tog" role="group" aria-label="Atmósfera" style="display: flex; gap: 4px; border: 1px solid {{line}}; border-radius: 999px; padding: 4px">
 <button class="btn" type="button" onClick="{{irSombra}}" aria-pressed="{{esSombra}}" style="min-height: 36px; padding: 0 16px; border-radius: 999px; border: 0; cursor: pointer; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; background: {{tSBg}}; color: {{tSFg}}">Sombra</button>
@@ -83,9 +87,9 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <sc-if value="{{esLuz}}" hint-placeholder-val="{{false}}"><h1 style="margin: 0; font-size: clamp(36px, 4.2vw, 60px); line-height: 1.08; font-weight: 600">Lo invisible, hecho forma.</h1></sc-if>
 </div>
 <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px; max-width: 420px">
-<p style="margin: 0; font-size: 15px; line-height: 1.5">Soy Constanza, diseñadora gráfica. Me siento al lado de tu idea: pregunto, escucho y ordeno todo hasta que toma forma.</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">Soy Constanza, diseñadora gráfica. Me siento al lado de tu idea: pregunto, escucho y ordeno todo contigo hasta que toma forma.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center">
-<a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">Ver trabajos ↓</a>
+<a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: var(--intro-last-line-width, 100%); min-width: max-content; max-width: 100%; min-height: 48px; padding: 0 26px; border-radius: 999px; font-size: 15px; cursor: pointer; border: 1px solid {{fg}}">Ver trabajos ↓</a>
 </div>
 </div>
 </div>
@@ -98,9 +102,9 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px">
 <sc-for list="{{trabajosSeleccionados}}" as="p" hint-placeholder-count="4">
-<a class="pj home-card" href="{{p.href}}" style="grid-column: span {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a class="pj home-card {{p.wideClass}}" href="{{p.href}}" style="grid-column: span {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph" style="height: clamp(300px, 36vw, 540px); background: {{line}}">
-<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: {{p.fit}}; object-position: {{p.position}}"></sc-if>
 <sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span class="home-ph-placeholder">{{p.placeholder}}</span></sc-if>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.category}}</span></div>
@@ -116,7 +120,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px 24px; align-items: end">
 <div class="about-home-photo span-s" style="grid-column: span 5; min-width: 0">
-<img class="rev" src="./assets/3c6ee67c170d4a5aee268b34f0f45056.jpg" alt="Constanza Díaz en un puente de madera en el bosque" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 60%">
+<img class="rev" src="./assets/Sobre mi.webp" alt="Constanza Díaz sentada con un computador sobre la cabeza" style="display: block; width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center 85%">
 </div>
 <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 24px" class="span-s">
 <h2 class="home-about-name" style="margin: 0; font-size: clamp(32px, 3.25vw, 48px); line-height: 1.1; font-weight: 600">Constanza Díaz Olguín</h2>
@@ -184,17 +188,20 @@ class Component extends DCLogic {
       irLuz: function () { window.SHAFORM_SET_THEME('luz'); self.setState({ modo: 'luz' }); },
       alternar: function () { var nuevoModo = s ? 'luz' : 'sombra'; window.SHAFORM_SET_THEME(nuevoModo); self.setState({ modo: nuevoModo }); }
     };
-    var selectedIds = ['thanatos', 'lafken', 'vestigio', 'republica-marrana'];
+    var selectedIds = ['thanatos', 'un-instante-ya-fue', 'republica-marrana'];
     v.trabajosSeleccionados = selectedIds.map(function (id, index) {
       var project = projects.filter(function (p) { return p.id === id; })[0];
       return {
         name: project.name,
-        category: project.homeCategory,
-        img: project.image ? './assets/' + project.image : '',
-        alt: project.imageAlt,
-        placeholder: project.image ? '' : 'Imagen próximamente',
+        category: project.category,
+        img: project.homeImage ? '../Proyectos-html/assets/' + project.homeImage : (project.coverImage ? '../Proyectos-html/assets/' + project.coverImage : (project.image ? './assets/' + project.image : '')),
+        alt: project.coverAlt || project.imageAlt,
+        fit: 'cover',
+        position: project.cardImagePosition || 'center',
+        placeholder: project.homeImage || project.coverImage || project.image ? '' : 'Imagen próximamente',
         href: '../Proyecto.dc.html?proyecto=' + encodeURIComponent(project.id),
-        span: index === 0 || index === 3 ? 8 : 4
+        wideClass: project.id === 'vestigio' ? 'project-card--wide' : '',
+        span: index === 2 ? 12 : (index === 0 ? 8 : (index === 1 ? 4 : 12))
       };
     });
     v.etiquetaModo = s ? 'SOMBRA EL PROCESO' : 'LUZ EL RESULTADO';
@@ -202,6 +209,47 @@ class Component extends DCLogic {
     return v;
   }
 }
+</script>
+<script>
+(function () {
+  var paragraph;
+  var button;
+  var pending = false;
+  var resizeObserver = new ResizeObserver(schedule);
+
+  function schedule() {
+    if (!pending) {
+      pending = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  function update() {
+    pending = false;
+    var nextParagraph = document.querySelector('.home-intro > div:last-child > p');
+    var nextButton = document.querySelector('.home-intro a[href="#trabajos"]');
+    if (paragraph !== nextParagraph) {
+      if (paragraph) resizeObserver.unobserve(paragraph);
+      paragraph = nextParagraph;
+      if (paragraph) resizeObserver.observe(paragraph);
+    }
+    button = nextButton;
+    if (!paragraph || !button) return;
+    var range = document.createRange();
+    range.selectNodeContents(paragraph);
+    var lines = range.getClientRects();
+    if (lines.length) {
+      button.style.setProperty('--intro-last-line-width', (lines[lines.length - 1].right - paragraph.getBoundingClientRect().left) + 'px');
+    }
+  }
+
+  new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, characterData: true });
+  if (document.fonts) {
+    document.fonts.ready.then(schedule);
+    document.fonts.addEventListener('loadingdone', schedule);
+  }
+  schedule();
+})();
 </script>
 </body>
 </html>

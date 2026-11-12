@@ -1,0 +1,65 @@
+header#top .navlinks .lnk {
+  display: inline-grid !important;
+  align-items: center;
+  font-weight: 400;
+  transition: font-weight .2s ease;
+}
+
+header#top .navlinks .lnk > span,
+header#top .navlinks .lnk::after {
+  grid-area: 1 / 1;
+}
+
+header#top .navlinks .lnk::after {
+  content: attr(data-label);
+  font-weight: 700;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+header#top .navlinks .lnk::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F8BED6;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+header#top .navlinks .lnk:hover,
+header#top .navlinks .lnk:focus-visible {
+  font-weight: 700;
+}
+
+header#top .navlinks .lnk[aria-current="page"] {
+  font-weight: 600;
+}
+
+header#top .navlinks .lnk[aria-current="page"]::before,
+header#top .navlinks .lnk:hover::before,
+header#top .navlinks .lnk:focus-visible::before {
+  opacity: 1;
+}
+
+.m-sombra header#top .navlinks .lnk:hover,
+.m-sombra header#top .navlinks .lnk:focus-visible {
+  color: #FFFFFF !important;
+}
+
+.m-luz header#top .navlinks .lnk:hover,
+.m-luz header#top .navlinks .lnk:focus-visible {
+  color: #000000 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header#top .navlinks .lnk,
+  header#top .navlinks .lnk::before {
+    transition: none;
+  }
+}
