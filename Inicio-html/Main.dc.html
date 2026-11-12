@@ -57,8 +57,8 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .home-intro{align-items:end!important}
 @media(max-width:760px){.home-intro{grid-template-columns:1fr!important;gap:24px!important;align-items:start!important}.home-intro>div:last-child{max-width:none!important}}
 @media(max-width:1024px){.g > .project-card--wide{grid-column:span 12!important}}
-@media(hover:none),(pointer:coarse){.home-card img{filter:none!important}}
-@media(hover:none),(pointer:coarse){.about-home-photo .rev{filter:none!important;transform:none!important}}
+@media(hover:none),(pointer:coarse){.home-card img{filter:grayscale(100%)!important}}
+@media(hover:none),(pointer:coarse){.about-home-photo .rev,.about-home-photo:hover .rev{filter:grayscale(100%)!important;transform:none!important}}
 @media(max-width:1024px){.home-about-name{white-space:normal}}
 @media(max-width:760px){.g{grid-template-columns:minmax(0,1fr)!important}.g > *,.g > .project-card--wide{grid-column:1 / -1!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
