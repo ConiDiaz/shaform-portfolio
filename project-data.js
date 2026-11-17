@@ -3,7 +3,6 @@ window.SHAFORM_PROJECTS = [
     id: 'thanatos',
     name: 'Thanatos',
     category: 'Fotografía y editorial',
-    homeCategory: 'Fotografía y diseño editorial',
     filters: ['fotografia', 'editorial'],
     image: '495d68695761413f5b19c6c9b7718e0e.jpg',
     imageAlt: 'Fotolibro Thanatos',
@@ -70,9 +69,8 @@ window.SHAFORM_PROJECTS = [
   {
     id: 'vestigio',
     name: 'Vestigio',
-    category: 'Identidad',
-    homeCategory: 'Identidad',
-    filters: ['identidad'],
+    category: 'Branding',
+    filters: ['branding'],
     image: '30c82996a72b31768aa59cb6f146c9d5.jpg',
     imageAlt: 'Papelería del Centro de Documentación del MNBA: carpetas, sobres y credenciales',
     coverImage: 'Vestigio 1.webp',
@@ -105,9 +103,8 @@ window.SHAFORM_PROJECTS = [
   {
     id: 'republica-marrana',
     name: 'República Marrana',
-    category: 'Identidad y editorial',
-    homeCategory: 'Identidad y editorial',
-    filters: ['editorial'],
+    category: 'Branding y Editorial',
+    filters: ['branding', 'editorial'],
     image: '',
     imageAlt: '',
     coverImage: 'Republica marrana 1.webp',
@@ -161,6 +158,125 @@ window.SHAFORM_PROJECTS = [
       'Transformar lo invisible en una experiencia editorial tangible.'
     ],
     reflection: 'Cada proyecto comienza mucho antes de su resultado final. Entre pruebas, errores y descubrimientos, las ideas encuentran su propia forma.',
+    cardSpan: 6
+  },
+  {
+    id: 'music-of-emotions',
+    name: 'MUSIC OF EMOTIONS',
+    category: 'Datos y Editorial',
+    filters: ['datos', 'editorial'],
+    year: '2025',
+    contextLabel: 'Proyecto académico',
+    role: 'Visualización de datos y diseño editorial',
+    shortDescription: 'Hay canciones que acompañan momentos y emociones que permanecen. Music of Emotions transforma esos pequeños fragmentos de la vida en un lenguaje de formas, colores y texturas.',
+    description: [
+      'La música tiene una manera especial de quedarse con nosotros. A veces una canción guarda un momento, un lugar o una emoción que resulta difícil explicar.',
+      'Music of Emotions nace de esa conexión entre lo que escuchamos y lo que sentimos.',
+      'Mediante figuras geométricas, tamaños, colores y texturas, los registros musicales se transforman en composiciones visuales. Cada elemento representa información: artistas, géneros, duración, momentos del día y estados emocionales.',
+      'El proyecto explora cómo los datos pueden dejar de ser únicamente números para convertirse en una representación sensible de nuestras experiencias cotidianas.'
+    ],
+    objectives: [
+      'Dar forma a lo invisible\nTransformar recuerdos, emociones y experiencias musicales en un lenguaje visual.',
+      'Encontrar conexiones\nRelacionar canciones, momentos del día y sentimientos a través de los datos.',
+      'Contar sin palabras\nCrear un sistema gráfico donde cada forma, color y textura tenga algo que decir.'
+    ],
+    reflection: 'Detrás de cada dato existe una experiencia. Y detrás de cada canción, una pequeña parte de nuestra historia.',
+    cardSpan: 6
+  },
+  {
+    id: 'shashary',
+    name: 'SHASHARY',
+    category: 'Branding',
+    filters: ['branding'],
+    year: '2021',
+    contextLabel: 'Proyecto de emprendimiento',
+    role: 'Conceptualización e identidad de marca',
+    shortDescription: 'Cada mascota tiene una personalidad que la hace única. SHASHARY nace para celebrar esas diferencias a través de prendas especiales, inclusivas y llenas de cariño.',
+    description: [
+      'No existen dos mascotas iguales. Cada una tiene su propia forma de moverse, jugar, acompañarnos y demostrar cariño.',
+      'SHASHARY nace de la idea de que esas diferencias merecen ser celebradas.',
+      'El proyecto propone una marca de vestuario para mascotas que busca adaptarse a distintos animales, tamaños y características físicas, alejándose de la idea de que todos deben ajustarse a un mismo modelo.',
+      'Cada prenda se piensa como una pequeña expresión de identidad, donde la creatividad y la personalización permiten transformar algo cotidiano en algo especial.'
+    ],
+    objectives: [
+      'Celebrar las diferencias\nDiseñar vestuario que considere la diversidad de animales, cuerpos y tamaños.',
+      'Vestir con cariño\nCrear prendas que reflejen la personalidad de cada mascota.',
+      'Acercar el diseño\nProponer alternativas accesibles para que más personas puedan disfrutarlas.'
+    ],
+    reflection: 'Porque el cariño no tiene una sola forma, el diseño tampoco debería tener una sola talla.',
+    cardSpan: 6
+  },
+  {
+    id: 'nodo',
+    name: 'NODO',
+    category: 'Editorial',
+    filters: ['editorial'],
+    year: '2024',
+    contextLabel: 'Proyecto académico',
+    role: 'Dirección de arte y diseño editorial',
+    collaborators: ['Alinette Galdames', 'Felipe Stuven'],
+    shortDescription: 'Entre ideas que se cruzan, imágenes que dialogan y reglas que se transforman, NODO explora el posmodernismo como un espacio de libertad creativa.',
+    description: [
+      'Hay ideas que no necesitan seguir un solo camino para encontrarse.',
+      'NODO nace desde esa libertad, explorando el posmodernismo como una forma de cuestionar las estructuras tradicionales del diseño.',
+      'La revista reúne contrastes, composiciones experimentales y diferentes lenguajes visuales que conviven dentro de un mismo espacio editorial.',
+      'Cada página se convierte en un lugar de encuentro entre información, expresión y creatividad.'
+    ],
+    objectives: [
+      'Cuestionar lo establecido\nExplorar nuevas maneras de comprender el diseño editorial.',
+      'Conectar lenguajes\nExperimentar con tipografías, imágenes y composiciones diversas.',
+      'Crear nuevas lecturas\nConstruir una revista donde cada página invite a descubrir algo diferente.'
+    ],
+    reflection: 'A veces, las ideas más interesantes aparecen cuando dejamos de buscar un único orden y permitimos que diferentes miradas se encuentren.',
+    cardSpan: 6
+  },
+  {
+    id: 'manos-creativas',
+    name: 'Manos Creativas',
+    category: 'Branding',
+    filters: ['branding'],
+    year: '2026',
+    contextLabel: 'Proyecto académico / Vinculación comunitaria',
+    role: 'Diseño de identidad visual',
+    collaborators: ['Alinette Galdames', 'Sofía Garrido'],
+    shortDescription: 'Detrás de cada creación existen manos, historias y personas. Manos Creativas busca dar identidad a una comunidad que encuentra en el hacer una forma de compartir.',
+    description: [
+      'Crear con las manos también es una manera de contar historias.',
+      'Manos Creativas nace del encuentro con una agrupación comunitaria de Maipú, donde la creatividad, los oficios y el trabajo compartido forman parte de una identidad colectiva.',
+      'El proyecto busca representar ese espíritu mediante un lenguaje visual cercano, reconocible y adaptable.',
+      'Más que desarrollar una identidad gráfica, la propuesta busca dar visibilidad a las personas y al valor que existe detrás de cada creación.'
+    ],
+    objectives: [
+      'Reconocer historias\nRepresentar la identidad y el trabajo de una comunidad creativa.',
+      'Dar visibilidad\nDestacar el valor de las habilidades y creaciones de sus integrantes.',
+      'Construir pertenencia\nDesarrollar una identidad visual que conecte a las personas.'
+    ],
+    reflection: 'Cuando muchas manos crean juntas, también construyen vínculos, recuerdos y nuevas maneras de encontrarse.',
+    cardSpan: 6
+  },
+  {
+    id: 'conectahuellas',
+    name: 'ConectaHuellas',
+    category: 'UX/UI',
+    filters: ['uxui'],
+    year: '2026',
+    contextLabel: 'Proyecto académico / Diseño sustentable',
+    role: 'Investigación, estrategia y diseño digital',
+    collaborators: ['Alinette Galdames'],
+    shortDescription: 'Hay vidas que necesitan ser escuchadas, aunque no puedan hablar. ConectaHuellas busca transformar la preocupación por los animales en información, apoyo y acción colectiva.',
+    description: [
+      'Hay problemáticas que permanecen ocultas hasta que alguien decide mirarlas con atención.',
+      'ConectaHuellas nace de la necesidad de visibilizar los criaderos ilegales y las dificultades que enfrentan las personas para denunciar situaciones de maltrato animal en Talagante.',
+      'El proyecto propone una plataforma digital que reúne información, educación y herramientas de participación comunitaria.',
+      'A través de una experiencia accesible, busca facilitar las denuncias responsables, el seguimiento de casos y la conexión entre ciudadanía y organizaciones de protección animal.',
+      'La propuesta se complementa con una estrategia de comunicación en redes sociales, utilizando el diseño para informar, sensibilizar y acercar esta problemática a más personas.'
+    ],
+    objectives: [
+      'Hacer visible lo invisible\nInformar sobre los criaderos ilegales y las situaciones que afectan el bienestar animal.',
+      'Crear caminos de ayuda\nFacilitar el acceso a información y herramientas de denuncia.',
+      'Unir a las personas\nConectar a la comunidad con organizaciones dedicadas a la protección animal.'
+    ],
+    reflection: 'Cuidar también es prestar atención a quienes no tienen voz. A veces, una pequeña acción puede ser el comienzo de un cambio mucho más grande.',
     cardSpan: 6
   }
 ];
