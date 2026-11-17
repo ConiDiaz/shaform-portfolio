@@ -16,7 +16,7 @@ window.SHAFORM_PROJECTS = [
     year: '2024',
     contextLabel: 'Proyecto individual',
     role: 'Fotografía y diseño editorial',
-    shortDescription: 'Un relato fotográfico sobre la fragilidad de la vida, la muerte y la memoria.',
+    shortDescription: 'Un fotolibro que recorre el cementerio para explorar, a través de la fotografía, la fragilidad de la vida, la muerte, el olvido y la memoria.',
     description: [
       'Thanatos es un fotolibro nacido desde el cementerio, un espacio donde la vida y la muerte se encuentran sin disfraz. A través de sus imágenes, el recorrido revela la fragilidad de la existencia y la certeza de un destino compartido.',
       'Entre lápidas, nombres borrados y flores marchitas aparece también el olvido: esa segunda muerte que llega cuando ya nadie recuerda.',
@@ -52,7 +52,7 @@ window.SHAFORM_PROJECTS = [
     year: '2025',
     contextLabel: 'Proyecto interactivo en p5.js',
     role: 'Diseño y programación creativa',
-    shortDescription: 'Un proyecto de diseño interactivo desarrollado mediante programación creativa en p5.js.',
+    shortDescription: 'Un proyecto de diseño interactivo que explora la relación entre las personas, el tiempo y las imágenes mediante programación creativa en p5.js.',
     description: [
       'Proyecto desarrollado mediante programación creativa en p5.js.'
     ],
@@ -84,7 +84,7 @@ window.SHAFORM_PROJECTS = [
     contextLabel: 'CEDOC MNBA',
     role: 'Diseño de identidad visual',
     collaborators: ['Alinette Galdames'],
-    shortDescription: 'Una identidad visual para hacer visible la memoria del archivo del MNBA.',
+    shortDescription: 'Una identidad visual para el Centro de Documentación del MNBA que hace visible la memoria y las historias que conserva su archivo.',
     description: [
       'Vestigio es un sistema de identidad visual desarrollado para el Centro de Documentación del Museo Nacional de Bellas Artes.',
       'La propuesta busca dar forma a un lenguaje gráfico claro, coherente y con personalidad propia, integrando los lineamientos visuales del museo y del Ministerio de las Culturas, las Artes y el Patrimonio.',
@@ -119,7 +119,7 @@ window.SHAFORM_PROJECTS = [
     contextLabel: 'Proyecto musical conceptual',
     role: 'Composición y diseño editorial',
     collaborators: ['Alinette Galdames'],
-    shortDescription: 'Un álbum conceptual que cruza música, crítica social y gráfica irreverente.',
+    shortDescription: 'Un álbum conceptual para Chancho en Piedra que cruza música, crítica social y gráfica irreverente en una propuesta editorial.',
     description: [
       'República Marrana es una propuesta de álbum conceptual para Chancho en Piedra, imaginada como parte de un recopilatorio de su trayectoria musical.',
       'El proyecto reúne canciones que cuestionan distintos aspectos de la sociedad actual, utilizando la crítica, la ironía y el lenguaje visual como herramientas de expresión.',
@@ -150,7 +150,7 @@ window.SHAFORM_PROJECTS = [
     year: '2026',
     contextLabel: 'Proyecto personal',
     role: 'Dirección de arte y diseño editorial.',
-    shortDescription: 'Un archivo editorial que revela las ideas, procesos y materiales detrás de SHAFORM.',
+    shortDescription: 'Un archivo editorial que reúne las ideas, los proyectos y los procesos creativos detrás de SHAFORM, entre papeles, colores y texturas.',
     description: ['Un archivo editorial que reúne lo que sucede detrás de SHAFORM: ideas, proyectos y procesos creativos que toman forma entre papeles, colores y texturas.'],
     objectives: [
       'Experimentar con papeles, texturas y transparencias.',
@@ -168,7 +168,7 @@ window.SHAFORM_PROJECTS = [
     year: '2025',
     contextLabel: 'Proyecto académico',
     role: 'Visualización de datos y diseño editorial',
-    shortDescription: 'Hay canciones que acompañan momentos y emociones que permanecen. Music of Emotions transforma esos pequeños fragmentos de la vida en un lenguaje de formas, colores y texturas.',
+    shortDescription: 'Music of Emotions transforma canciones y emociones en un lenguaje visual de formas, colores y texturas que conecta música y recuerdos.',
     description: [
       'La música tiene una manera especial de quedarse con nosotros. A veces una canción guarda un momento, un lugar o una emoción que resulta difícil explicar.',
       'Music of Emotions nace de esa conexión entre lo que escuchamos y lo que sentimos.',

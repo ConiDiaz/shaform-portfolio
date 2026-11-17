@@ -45,7 +45,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-intro{gap:20px!important;padding-top:clamp(24px,4vw,56px)!important;padding-bottom:clamp(24px,3vw,40px)!important}
 .project-title{font-size:clamp(40px,6.4vw,88px)!important}
 .project-intro-grid{gap:24px!important;align-items:end!important}
-.project-summary{width:calc(100% + 24px);margin:0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;font-weight:300}
+.project-summary{width:calc(100% + 24px);margin:0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;font-weight:300;text-wrap:pretty}
 .project-meta{width:560px;max-width:100%;margin:0 0 0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:12px 16px;font-size:14px}
 .project-meta>div{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:baseline;gap:0 8px}
 .project-meta dt,.project-label{font-weight:400;letter-spacing:.08em;text-transform:uppercase}
@@ -86,8 +86,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-transition p{margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
 .project-description{display:flex;flex-direction:column;gap:var(--project-paragraph-gap)}
 .project-description p{margin:0;font-size:18px;line-height:1.7}
-.project--music-of-emotions .project-description p,.project--shashary .project-description p,.project--nodo .project-description p,.project--shashary .project-summary,.project--nodo .project-summary{text-wrap:pretty}
-.project--manos-creativas .project-summary,.project--conectahuellas .project-summary,.project--conectahuellas .project-description p,.project--conectahuellas .project-objective .sc-interp{text-wrap:pretty}
+.project--music-of-emotions .project-description p,.project--shashary .project-description p,.project--nodo .project-description p,.project--conectahuellas .project-description p,.project--conectahuellas .project-objective .sc-interp{text-wrap:pretty}
 .project--nodo .project-reflection p{text-wrap:balance}
 .project-no-widow{white-space:nowrap}
 .project--conectahuellas .project-objective .project-no-widow .sc-interp{white-space:nowrap}
@@ -128,8 +127,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <h1 class="project-title project-title--{{projectId}}" style="margin: 0; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; font-weight: 600; max-width: 1100px">{{nombre}}</h1>
 <div class="project-intro-grid" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: start">
 <div class="span-s" style="grid-column: span 5; min-width: 0">
-<sc-if value="{{evitarViudaResumen}}" hint-placeholder-val="{{false}}"><p class="project-summary">{{resumenSinViuda.inicio}}<span class="project-no-widow">{{resumenSinViuda.final}}</span></p></sc-if>
-<sc-if value="{{noEvitarViudaResumen}}" hint-placeholder-val="{{true}}"><p class="project-summary">{{descripcionBreve}}</p></sc-if>
+<p class="project-summary">{{resumenSinViuda.inicio}}<span class="project-no-widow">{{resumenSinViuda.final}}</span></p>
 </div>
 <dl class="span-s project-meta" style="grid-column: 6 / span 7">
 <div class="meta-year"><dt>Año</dt><dd>{{anio}}</dd></div>
@@ -259,7 +257,6 @@ class Component extends DCLogic {
     }
     var esNodo = project.id === 'nodo';
     var esConectahuellas = project.id === 'conectahuellas';
-    var evitarViudaResumen = esNodo || esConectahuellas || project.id === 'manos-creativas';
     var evitarViudas = esNodo || esConectahuellas || project.id === 'shashary' || project.id === 'music-of-emotions';
     document.title = 'SHAFORM — ' + project.name;
     var v = {
@@ -274,17 +271,14 @@ class Component extends DCLogic {
       anio: project.year,
       contextoCorto: project.contextLabel,
       rol: project.role,
-      descripcionBreve: project.shortDescription,
       descripcion: project.description,
       esNodo: esNodo,
       noEsNodo: !esNodo,
       esConectahuellas: esConectahuellas,
       noEsConectahuellas: !esConectahuellas,
-      evitarViudaResumen: evitarViudaResumen,
-      noEvitarViudaResumen: !evitarViudaResumen,
       evitarViudas: evitarViudas,
       noEvitarViudas: !evitarViudas,
-      resumenSinViuda: evitarViudaResumen ? evitarViuda(project.shortDescription) : null,
+      resumenSinViuda: evitarViuda(project.shortDescription),
       descripcionSinViudas: evitarViudas ? project.description.map(evitarViuda) : [],
       reflexionSinViuda: esNodo ? evitarViuda(project.reflection) : null,
       objetivosSinViudas: esConectahuellas ? project.objectives.map(evitarViuda) : [],
