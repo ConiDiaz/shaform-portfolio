@@ -46,9 +46,11 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-title{font-size:clamp(40px,6.4vw,88px)!important}
 .project-intro-grid{gap:24px!important;align-items:end!important}
 .project-summary{width:calc(100% + 24px);margin:0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;font-weight:300}
-.project-meta{width:560px;max-width:100%;margin:0 0 0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;font-size:11px}
-.project-meta>div{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;gap:0 8px}
-.project-meta dt,.project-label{font-size:9px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.project-meta{width:560px;max-width:100%;margin:0 0 0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:12px 16px;font-size:14px}
+.project-meta>div{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:baseline;gap:0 8px}
+.project-meta dt,.project-label{font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.project-meta dt{font-size:11px}
+.project-label{font-size:9px}
 .project-meta dd{margin:0;line-height:1.3}
 .project-meta .meta-year{grid-column:1;grid-row:1}
 .project-meta .meta-category{grid-column:2;grid-row:2}
@@ -84,6 +86,11 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 .project-transition p{margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.2;font-weight:600}
 .project-description{display:flex;flex-direction:column;gap:var(--project-paragraph-gap)}
 .project-description p{margin:0;font-size:18px;line-height:1.7}
+.project--music-of-emotions .project-description p,.project--shashary .project-description p,.project--nodo .project-description p,.project--shashary .project-summary,.project--nodo .project-summary{text-wrap:pretty}
+.project--manos-creativas .project-summary,.project--conectahuellas .project-summary,.project--conectahuellas .project-description p,.project--conectahuellas .project-objective .sc-interp{text-wrap:pretty}
+.project--nodo .project-reflection p{text-wrap:balance}
+.project-no-widow{white-space:nowrap}
+.project--conectahuellas .project-objective .project-no-widow .sc-interp{white-space:nowrap}
 .project-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
 .project-gallery figure{grid-column:span 6;margin:0;min-width:0}
 .project-gallery figure:first-child:nth-last-child(1){grid-column:span 12}
@@ -96,13 +103,14 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 @media(max-width:1200px){.project-intro-grid{grid-template-columns:1fr!important;gap:20px!important}.project-intro-grid>.span-s{grid-column:1!important}.project-summary{width:auto;max-width:500px}.project-meta{width:100%;max-width:100%;margin-left:0}}
 @media(max-width:760px){:root{--project-section-inset:32px;--project-section-gap:40px;--project-section-space:72px;--project-paragraph-gap:24px}.project-meta{width:100%;grid-template-columns:1fr}.project-meta .meta-year,.project-meta .meta-category,.project-meta .meta-context,.project-meta .meta-role{grid-column:1}.project-meta .meta-year{grid-row:1}.project-meta .meta-context{grid-row:2}.project-meta .meta-role{grid-row:3}.project-meta .meta-category{grid-row:4}.project-row h2,.project-row>div,.project-reflection h2,.project-reflection p{grid-column:1/-1}.project-objectives{grid-template-columns:1fr;gap:28px}.project-objective .sc-interp{white-space:normal}.project-gallery{grid-template-columns:1fr}.project-gallery figure,.project-gallery figure:first-child:nth-last-child(1){grid-column:1}.project-reflection{gap:24px}.project-transition{padding-top:40px;gap:24px}}
 @media(max-width:760px){.project-gallery--thanatos figure,.project-gallery--vestigio figure,.project-gallery--republica-marrana figure,.project-gallery--un-instante-ya-fue figure,.project-gallery--shaform figure{grid-column:1!important}}
+@media(max-width:380px){.project-title--conectahuellas{font-size:clamp(30px,10vw,40px)!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.root{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 <link rel="stylesheet" href="./header-nav.css">
 </helmet>
-<div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
+<div class="root {{modoClass}} project--{{projectId}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
-<a href="./Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
+<a href="./Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img sc-camel-src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <button class="menubtn" type="button" aria-label="Menú" aria-controls="header-menu" aria-expanded="{{menuAbierto}}" onClick="{{alternarMenu}}"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
 <div id="header-menu" class="header-menu" style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
@@ -117,10 +125,11 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </header>
 <section class="project-intro" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<h1 class="project-title" style="margin: 0; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; font-weight: 600; max-width: 1100px">{{nombre}}</h1>
+<h1 class="project-title project-title--{{projectId}}" style="margin: 0; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; font-weight: 600; max-width: 1100px">{{nombre}}</h1>
 <div class="project-intro-grid" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; align-items: start">
 <div class="span-s" style="grid-column: span 5; min-width: 0">
-<p class="project-summary">{{descripcionBreve}}</p>
+<sc-if value="{{evitarViudaResumen}}" hint-placeholder-val="{{false}}"><p class="project-summary">{{resumenSinViuda.inicio}}<span class="project-no-widow">{{resumenSinViuda.final}}</span></p></sc-if>
+<sc-if value="{{noEvitarViudaResumen}}" hint-placeholder-val="{{true}}"><p class="project-summary">{{descripcionBreve}}</p></sc-if>
 </div>
 <dl class="span-s project-meta" style="grid-column: 6 / span 7">
 <div class="meta-year"><dt>Año</dt><dd>{{anio}}</dd></div>
@@ -131,14 +140,17 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </section>
 <div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%">
-<sc-if value="{{hasImage}}" hint-placeholder-val="{{false}}"><figure class="project-cover"><img src="{{coverSrc}}" alt="{{coverAlt}}"></figure></sc-if>
+<sc-if value="{{hasImage}}" hint-placeholder-val="{{false}}"><figure class="project-cover"><img sc-camel-src="{{coverSrc}}" alt="{{coverAlt}}"></figure></sc-if>
 <sc-if value="{{hasCoverPlaceholder}}" hint-placeholder-val="{{false}}"><div class="project-placeholder">{{coverPlaceholder}}</div></sc-if>
 </div>
 <section id="contenido" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(72px, 9vw, 128px); padding-bottom: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: clamp(56px, 7vw, 88px)">
 <div class="project-story">
 <div class="project-row">
 <h2 class="span-s">El proyecto</h2>
-<div class="span-s project-description"><sc-for list="{{descripcion}}" as="parrafo" hint-placeholder-count="2"><p>{{parrafo}}</p></sc-for></div>
+<div class="span-s project-description">
+<sc-if value="{{evitarViudas}}" hint-placeholder-val="{{false}}"><sc-for list="{{descripcionSinViudas}}" as="parrafo" hint-placeholder-count="2"><p>{{parrafo.inicio}}<span class="project-no-widow">{{parrafo.final}}</span></p></sc-for></sc-if>
+<sc-if value="{{noEvitarViudas}}" hint-placeholder-val="{{true}}"><sc-for list="{{descripcion}}" as="parrafo" hint-placeholder-count="2"><p>{{parrafo}}</p></sc-for></sc-if>
+</div>
 </div>
 <sc-if value="{{tieneContexto}}" hint-placeholder-val="{{false}}"><div class="project-row">
 <h2 class="span-s">Contexto</h2>
@@ -150,7 +162,10 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div></sc-if>
 <div class="project-row project-row--objectives">
 <h2 class="span-s">Objetivos</h2>
-<div class="span-s project-objectives"><sc-for list="{{objetivos}}" as="objetivo" hint-placeholder-count="3"><div class="project-objective">{{objetivo}}</div></sc-for></div>
+<div class="span-s project-objectives">
+<sc-if value="{{esConectahuellas}}" hint-placeholder-val="{{false}}"><sc-for list="{{objetivosSinViudas}}" as="objetivo" hint-placeholder-count="3"><div class="project-objective"><span>{{objetivo.inicio}}<span class="project-no-widow">{{objetivo.final}}</span></span></div></sc-for></sc-if>
+<sc-if value="{{noEsConectahuellas}}" hint-placeholder-val="{{true}}"><sc-for list="{{objetivos}}" as="objetivo" hint-placeholder-count="3"><div class="project-objective">{{objetivo}}</div></sc-for></sc-if>
+</div>
 </div>
 </div>
 </section>
@@ -162,14 +177,14 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <h2 class="project-label" style="margin: 0">Resultado</h2>
 <div class="project-gallery {{galeriaClass}}"><sc-for list="{{galeria}}" as="item" hint-placeholder-count="3">
 <figure style="grid-column: {{item.span}}">
-<sc-if value="{{item.src}}" hint-placeholder-val="{{''}}"><img src="{{item.src}}" alt="{{item.alt}}"></sc-if>
+<sc-if value="{{item.src}}" hint-placeholder-val="{{''}}"><img sc-camel-src="{{item.src}}" alt="{{item.alt}}"></sc-if>
 <sc-if value="{{item.placeholder}}" hint-placeholder-val="{{''}}"><div class="project-placeholder gallery-placeholder">{{item.placeholder}}</div></sc-if>
 <sc-if value="{{item.caption}}" hint-placeholder-val="{{''}}"><figcaption>{{item.caption}}</figcaption></sc-if>
 </figure>
 </sc-for></div>
 </section>
 <section aria-label="Lo que quedó" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(72px, 9vw, 128px)">
-<div class="project-reflection"><h2>Lo que quedó</h2><p>{{reflexion}}</p></div>
+<div class="project-reflection"><h2>Lo que quedó</h2><sc-if value="{{esNodo}}" hint-placeholder-val="{{false}}"><p>{{reflexionSinViuda.inicio}}<span class="project-no-widow">{{reflexionSinViuda.final}}</span></p></sc-if><sc-if value="{{noEsNodo}}" hint-placeholder-val="{{true}}"><p>{{reflexion}}</p></sc-if></div>
 </section>
 <section aria-label="Cierre del proyecto" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: clamp(56px, 7vw, 96px)">
 <div style="border-top: 1px solid {{line}}; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center">
@@ -200,7 +215,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </div>
 <a href="./Inicio-html/Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden; transform: translateY(12px)">
-<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
+<img sc-camel-src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
 </a>
 </footer>
 </div>
@@ -238,6 +253,14 @@ class Component extends DCLogic {
         { src: '', alt: '', caption: '', placeholder: 'Imagen secundaria pendiente de incorporar.', span: 'span 6' }
       );
     }
+    function evitarViuda(texto) {
+      var partes = texto.match(/^([\s\S]*\s)(\S+\s+\S+)$/);
+      return partes ? { inicio: partes[1], final: partes[2] } : { inicio: '', final: texto };
+    }
+    var esNodo = project.id === 'nodo';
+    var esConectahuellas = project.id === 'conectahuellas';
+    var evitarViudaResumen = esNodo || esConectahuellas || project.id === 'manos-creativas';
+    var evitarViudas = esNodo || esConectahuellas || project.id === 'shashary' || project.id === 'music-of-emotions';
     document.title = 'SHAFORM — ' + project.name;
     var v = {
       esSombra: s, esLuz: !s,
@@ -246,12 +269,25 @@ class Component extends DCLogic {
       line: s ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.16)',
       logo: s ? './assets/39ee6c72a1b9c78d7996165fdac0f45e.png' : './assets/ed8523632032579f51b8ff645527fb0c.png',
       nombre: project.name,
+      projectId: project.id,
       categoria: project.category,
       anio: project.year,
       contextoCorto: project.contextLabel,
       rol: project.role,
       descripcionBreve: project.shortDescription,
       descripcion: project.description,
+      esNodo: esNodo,
+      noEsNodo: !esNodo,
+      esConectahuellas: esConectahuellas,
+      noEsConectahuellas: !esConectahuellas,
+      evitarViudaResumen: evitarViudaResumen,
+      noEvitarViudaResumen: !evitarViudaResumen,
+      evitarViudas: evitarViudas,
+      noEvitarViudas: !evitarViudas,
+      resumenSinViuda: evitarViudaResumen ? evitarViuda(project.shortDescription) : null,
+      descripcionSinViudas: evitarViudas ? project.description.map(evitarViuda) : [],
+      reflexionSinViuda: esNodo ? evitarViuda(project.reflection) : null,
+      objetivosSinViudas: esConectahuellas ? project.objectives.map(evitarViuda) : [],
       contexto: project.context,
       desafio: project.challenge,
       tieneContexto: Boolean(project.context),

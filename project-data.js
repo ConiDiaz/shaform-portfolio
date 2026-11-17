@@ -191,12 +191,12 @@ window.SHAFORM_PROJECTS = [
     year: '2021',
     contextLabel: 'Proyecto de emprendimiento',
     role: 'Conceptualización e identidad de marca',
-    shortDescription: 'Cada mascota tiene una personalidad que la hace única. SHASHARY nace para celebrar esas diferencias a través de prendas especiales, inclusivas y llenas de cariño.',
+    shortDescription: 'SHASHARY celebra la personalidad única de cada mascota a través de prendas inclusivas, especiales y hechas con cariño.',
     description: [
-      'No existen dos mascotas iguales. Cada una tiene su propia forma de moverse, jugar, acompañarnos y demostrar cariño.',
-      'SHASHARY nace de la idea de que esas diferencias merecen ser celebradas.',
-      'El proyecto propone una marca de vestuario para mascotas que busca adaptarse a distintos animales, tamaños y características físicas, alejándose de la idea de que todos deben ajustarse a un mismo modelo.',
-      'Cada prenda se piensa como una pequeña expresión de identidad, donde la creatividad y la personalización permiten transformar algo cotidiano en algo especial.'
+      'No existen dos mascotas iguales. Cada una tiene su propia forma de moverse, jugar y demostrar cariño.',
+      'SHASHARY nace de la idea de que esas diferencias merecen celebrarse.',
+      'El proyecto propone una marca de vestuario inclusivo para mascotas, con prendas adaptadas a distintos animales, tamaños y características físicas, sin imponer un único modelo.',
+      'Cada prenda expresa la identidad de cada mascota mediante la creatividad y la personalización, transformando lo cotidiano en algo único.'
     ],
     objectives: [
       'Celebrar las diferencias\nDiseñar vestuario que considere la diversidad de animales, cuerpos y tamaños.',
@@ -215,19 +215,19 @@ window.SHAFORM_PROJECTS = [
     contextLabel: 'Proyecto académico',
     role: 'Dirección de arte y diseño editorial',
     collaborators: ['Alinette Galdames', 'Felipe Stuven'],
-    shortDescription: 'Entre ideas que se cruzan, imágenes que dialogan y reglas que se transforman, NODO explora el posmodernismo como un espacio de libertad creativa.',
+    shortDescription: 'NODO explora el posmodernismo a través de una revista donde las ideas, las imágenes y la experimentación visual se encuentran.',
     description: [
-      'Hay ideas que no necesitan seguir un solo camino para encontrarse.',
-      'NODO nace desde esa libertad, explorando el posmodernismo como una forma de cuestionar las estructuras tradicionales del diseño.',
-      'La revista reúne contrastes, composiciones experimentales y diferentes lenguajes visuales que conviven dentro de un mismo espacio editorial.',
-      'Cada página se convierte en un lugar de encuentro entre información, expresión y creatividad.'
+      'Hay ideas que encuentran su lugar cuando dejamos de seguir un solo camino.',
+      'NODO explora el posmodernismo desde la libertad creativa, cuestionando las estructuras tradicionales del diseño.',
+      'La revista combina contrastes, composiciones experimentales y distintos lenguajes visuales dentro de un mismo espacio editorial.',
+      'Cada página reúne información, expresión y creatividad en una propuesta visual abierta a nuevas interpretaciones.'
     ],
     objectives: [
       'Cuestionar lo establecido\nExplorar nuevas maneras de comprender el diseño editorial.',
       'Conectar lenguajes\nExperimentar con tipografías, imágenes y composiciones diversas.',
       'Crear nuevas lecturas\nConstruir una revista donde cada página invite a descubrir algo diferente.'
     ],
-    reflection: 'A veces, las ideas más interesantes aparecen cuando dejamos de buscar un único orden y permitimos que diferentes miradas se encuentren.',
+    reflection: 'Las ideas más interesantes aparecen cuando dejamos que distintas miradas se encuentren.',
     cardSpan: 6
   },
   {
@@ -236,10 +236,10 @@ window.SHAFORM_PROJECTS = [
     category: 'Branding',
     filters: ['branding'],
     year: '2026',
-    contextLabel: 'Proyecto académico / Vinculación comunitaria',
+    contextLabel: 'Vinculación comunitaria',
     role: 'Diseño de identidad visual',
     collaborators: ['Alinette Galdames', 'Sofía Garrido'],
-    shortDescription: 'Detrás de cada creación existen manos, historias y personas. Manos Creativas busca dar identidad a una comunidad que encuentra en el hacer una forma de compartir.',
+    shortDescription: 'Manos Creativas da identidad a una comunidad de Maipú donde las historias y los oficios se encuentran a través de la creación.',
     description: [
       'Crear con las manos también es una manera de contar historias.',
       'Manos Creativas nace del encuentro con una agrupación comunitaria de Maipú, donde la creatividad, los oficios y el trabajo compartido forman parte de una identidad colectiva.',
@@ -260,20 +260,18 @@ window.SHAFORM_PROJECTS = [
     category: 'UX/UI',
     filters: ['uxui'],
     year: '2026',
-    contextLabel: 'Proyecto académico / Diseño sustentable',
-    role: 'Investigación, estrategia y diseño digital',
+    contextLabel: 'Proyecto académico',
+    role: 'Investigación y diseño UX/UI',
     collaborators: ['Alinette Galdames'],
-    shortDescription: 'Hay vidas que necesitan ser escuchadas, aunque no puedan hablar. ConectaHuellas busca transformar la preocupación por los animales en información, apoyo y acción colectiva.',
+    shortDescription: 'ConectaHuellas transforma la preocupación por los animales en una plataforma de información, apoyo y acción colectiva.',
     description: [
-      'Hay problemáticas que permanecen ocultas hasta que alguien decide mirarlas con atención.',
-      'ConectaHuellas nace de la necesidad de visibilizar los criaderos ilegales y las dificultades que enfrentan las personas para denunciar situaciones de maltrato animal en Talagante.',
-      'El proyecto propone una plataforma digital que reúne información, educación y herramientas de participación comunitaria.',
-      'A través de una experiencia accesible, busca facilitar las denuncias responsables, el seguimiento de casos y la conexión entre ciudadanía y organizaciones de protección animal.',
-      'La propuesta se complementa con una estrategia de comunicación en redes sociales, utilizando el diseño para informar, sensibilizar y acercar esta problemática a más personas.'
+      'ConectaHuellas surge para visibilizar los criaderos ilegales y las dificultades para denunciar el maltrato animal en Talagante.',
+      'La propuesta consiste en una plataforma digital que reúne información, educación y herramientas para facilitar denuncias responsables, dar seguimiento a casos y conectar a la comunidad con organizaciones de protección animal.',
+      'El proyecto también contempla una estrategia de comunicación en redes sociales para sensibilizar, informar y promover la participación ciudadana.'
     ],
     objectives: [
       'Hacer visible lo invisible\nInformar sobre los criaderos ilegales y las situaciones que afectan el bienestar animal.',
-      'Crear caminos de ayuda\nFacilitar el acceso a información y herramientas de denuncia.',
+      'Crear caminos de ayuda\nFacilitar el acceso a información, orientación y herramientas que permitan denunciar situaciones de maltrato animal.',
       'Unir a las personas\nConectar a la comunidad con organizaciones dedicadas a la protección animal.'
     ],
     reflection: 'Cuidar también es prestar atención a quienes no tienen voz. A veces, una pequeña acción puede ser el comienzo de un cambio mucho más grande.',

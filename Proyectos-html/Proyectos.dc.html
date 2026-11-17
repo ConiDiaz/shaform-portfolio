@@ -57,12 +57,21 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 @media(max-width:760px){
   .g>.project-card--pair{grid-column:1/-1!important}
   .project-card--pair .ph{height:auto!important;aspect-ratio:4/3}
+  .projects-intro{gap:20px!important;padding-bottom:32px!important}
+  .projects-intro h1{font-size:clamp(46px,12vw,52px)!important}
+  .projects-intro p{font-size:18px!important;line-height:1.5!important}
+  .projects-filters{padding-bottom:24px!important}
+}
+@media(max-width:480px){
+  .projects-filters [role="group"]{column-gap:6px!important}
+  .projects-filters .chip{box-sizing:border-box;padding:0 8px!important}
+  .projects-filters .chip:nth-child(-n+4){flex:0 0 calc(50% - 3px);justify-content:center}
 }
 </style>
 </helmet>
 <div class="root {{modoClass}}" style="background: {{bg}}; color: {{fg}}; transition: background-color .6s ease, color .6s ease; min-height: 100vh; font-family: Poppins, system-ui, sans-serif">
 <header id="top" style="position: sticky; top: 0; z-index: 20; max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: 20px; padding-bottom: 20px; display: flex; gap: 16px 40px; align-items: center; justify-content: space-between; font-size: 15px; background: {{bg}}">
-<a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
+<a href="../Inicio-html/Main.dc.html" style="display: inline-flex; align-items: center; min-height: 44px"><img sc-camel-src="{{logo}}" alt="SHAFORM, ir al inicio" style="height: 20px; width: auto; display: block"></a>
 <button class="menubtn" type="button" aria-label="Menú" aria-controls="header-menu" aria-expanded="{{menuAbierto}}" onClick="{{alternarMenu}}"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
 <div id="header-menu" class="header-menu" style="display: flex; align-items: center; gap: 16px 40px">
 <nav class="navlinks" aria-label="Principal" style="display: flex; gap: 32px; align-items: center">
@@ -76,14 +85,14 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </div>
 </header>
-<section style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<section class="projects-intro" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
 <div style="display: flex; flex-direction: column; gap: 16px">
 <h1 style="margin: 0; font-size: clamp(52px, 9vw, 128px); line-height: 1; font-weight: 600">Proyectos</h1>
 </div>
 <p style="margin: 0; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.36; font-weight: 300; flex: 0 1 420px">Identidad, editorial, gráfica y digital. Cada uno empezó como una idea sin forma.</p>
 </section>
 
-<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: 40px">
+<div class="projects-filters" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); box-sizing: border-box; width: 100%; padding-bottom: 40px">
 <div style="display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; border-top: 1px solid {{line}}; border-bottom: 1px solid {{line}}; padding: 14px 0">
 <div role="group" aria-label="Filtrar por categoría" style="display: flex; flex-wrap: wrap; gap: 8px">
 <sc-for list="{{chips}}" as="c" hint-placeholder-count="6">
@@ -99,7 +108,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 <sc-for list="{{lista}}" as="p" hint-placeholder-count="8">
 <a class="pj {{p.wideClass}} {{p.layoutClass}} {{p.zoomClass}}" href="{{p.href}}" style="grid-column: {{p.span}}; display: flex; flex-direction: column; gap: 14px; min-width: 0">
 <div class="ph {{p.phClass}}" style="height: {{p.h}}; background: {{line}}">
-<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: {{p.fit}}; object-position: {{p.position}}"></sc-if>
+<sc-if value="{{p.img}}" hint-placeholder-val="{{''}}"><img sc-camel-src="{{p.img}}" alt="{{p.alt}}" style="display: block; width: 100%; height: 100%; object-fit: {{p.fit}}; object-position: {{p.position}}"></sc-if>
 <sc-if value="{{p.placeholder}}" hint-placeholder-val="{{''}}"><span>{{p.placeholder}}</span></sc-if>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #F8BED6"></span>{{p.name}}</span><span style="font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase">{{p.cat}}</span></div>
@@ -128,7 +137,7 @@ footer>a img{display:block;width:100%;height:auto;transform:none!important}
 </div>
 </div>
 <a href="../Inicio-html/Main.dc.html" aria-label="SHAFORM, ir al inicio" style="display: block; height: clamp(56px, 10vw, 140px); overflow: hidden; transform: translateY(12px)">
-<img src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
+<img sc-camel-src="{{logo}}" alt="" style="display: block; width: 100%; height: auto; transform: translateY(10px)">
 </a>
 </footer>
 </div>
