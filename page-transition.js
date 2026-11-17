@@ -13,6 +13,7 @@
   var minimumTimer;
   var maximumTimer;
   var onPageLoad;
+  var circleFrame;
 
   function positionCircle() {
     var dot = document.querySelector('.home-logo-dot');
@@ -32,10 +33,16 @@
     return true;
   }
 
+  function trackCircle() {
+    positionCircle();
+    circleFrame = window.requestAnimationFrame(trackCircle);
+  }
+
   function clearLoading() {
     window.clearTimeout(cleanupTimer);
     window.clearTimeout(minimumTimer);
     window.clearTimeout(maximumTimer);
+    window.cancelAnimationFrame(circleFrame);
     if (onPageLoad) window.removeEventListener('load', onPageLoad);
     root.removeEventListener('animationend', onRevealEnd);
     window.removeEventListener('resize', positionCircle);
@@ -64,6 +71,7 @@
       if (positionCircle()) {
         window.addEventListener('resize', positionCircle);
         window.addEventListener('scroll', positionCircle);
+        circleFrame = window.requestAnimationFrame(trackCircle);
       } else {
         root.classList.remove('shaf-circle-loading');
       }
